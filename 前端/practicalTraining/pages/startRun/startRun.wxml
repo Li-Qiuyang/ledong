@@ -1,0 +1,16 @@
+<!--pages/startRun/startRun.wxml-->
+<view class="all">
+  <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+  <text class="title1" bindtap="left">返回</text>
+  <text class="pagetitle">{{type == "run" ? '跑步': type == "bike" ? '骑行' : type == 'walk' ? '健走' : ''}}</text>
+</view>
+<view class="mapArea">
+  <map class="map" style="width: 100%; height: 800px;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" covers="{{covers}}" show-location="true" polyline="{{polyline}}" show-compass="true" show-scale="true">
+    <view class="bottom">
+      <view class="bottomChild" bindtap="startRun">
+        <image class="picStart" src="../../icon/map/keep.png" />
+        <view class="start">开始</view>
+      </view>
+    </view>
+  </map>
+</view>

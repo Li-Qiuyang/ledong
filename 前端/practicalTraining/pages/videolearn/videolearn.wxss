@@ -1,0 +1,25 @@
+/* pages/videolearn/videolearn.wxss */
+.video {
+  width: 100%;
+  height: 100%;
+}
+
+.countdown {
+  font-size: 200rpx;
+  font-weight: bolder;
+  position: fixed;
+  color: white;
+}
+
+.count {
+  display: none;
+}
+
+.timer {
+  font-size: 20rpx;
+  font-weight: bolder;
+  position: fixed;
+  color: white;
+  left: 6%;
+  bottom: 7%
+}

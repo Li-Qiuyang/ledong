@@ -1,0 +1,59 @@
+<!--pages/setting/setting.wxml-->
+<view class="overall1">
+    <view class="all">
+        <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+        <text class="title1" bindtap="left">返回</text>
+        <text class="pagetitle">设置</text>
+    </view>
+    <view class="items">
+        <view class="item" bindtap="personalInformation">
+            <view>个人资料</view>
+            <image src="../../icon/point.png" class="point"></image>
+        </view>
+        <view class="item">
+            <view>账号与安全</view>
+            <image src="../../icon/point.png" class="point"></image>
+        </view>
+        <view class="item">
+            <view>消息设置</view>
+            <image src="../../icon/point.png" class="point"></image>
+        </view>
+        <view class="item">
+            <view>跑步设置</view>
+            <image src="../../icon/point.png" class="point"></image>
+        </view>
+        <view class="item">
+            <view>青少年模式</view>
+            <image src="../../icon/point.png" class="point"></image>
+        </view>
+    </view>
+    <view class="items">
+        <view class="item">
+            <view>通用功能</view>
+            <image src="../../icon/point.png" class="point"></image>
+        </view>
+        <view class="item">
+            <view>系统功能权限</view>
+            <image src="../../icon/point.png" class="point"></image>
+        </view>
+    </view>
+    <view class="items">
+        <view class="item">
+            <view>用户协议</view>
+            <image src="../../icon/point.png" class="point"></image>
+        </view>
+        <view class="item">
+            <view>隐私政策</view>
+            <image src="../../icon/point.png" class="point"></image>
+        </view>
+        <view class="item">
+            <view>社区协议</view>
+            <image src="../../icon/point.png" class="point"></image>
+        </view>
+        <view class="item" bindtap="logout">
+            <view>注销账号</view>
+            <image src="../../icon/point.png" class="point"></image>
+        </view>
+    </view>
+    <button style="width: 90%;" class="button" bindtap="quit">退出登录</button>
+</view>

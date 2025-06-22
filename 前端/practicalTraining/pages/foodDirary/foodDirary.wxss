@@ -1,0 +1,90 @@
+/* pages/foodDirary/foodDirary.wxss */
+.all {
+  height: 30px;
+  background-color: white;
+  padding-top: 70rpx;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+.containers {
+  height: 1500rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #CAE2FA;
+  padding-top: 50rpx;
+  padding-bottom:100rpx ;
+  box-sizing: border-box;
+}
+.count{
+  width: 700rpx;
+  height: 550rpx;
+  background-color: white;
+  margin: 60rpx auto;
+  border-radius: 50rpx;
+}
+.canvas{
+  display: block;
+  margin: 0 auto;
+}
+.header{
+  color: black;
+}
+.date{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.down{
+  height: 50rpx;
+  width: 50rpx;
+}
+.middle{
+  display: flex;
+  justify-content: space-between;
+}
+.bottom{
+  display: flex;
+  justify-content: space-between;
+}
+.txt{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 160rpx;
+}
+.kcal_txt{
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.food{
+  width: 700rpx;
+  height: 550rpx;
+  background-color: white;
+  margin: 60rpx auto;
+  padding-left: 20rpx;
+  border-radius: 50rpx;
+  padding-top: 30rpx;
+}
+.food_header{
+  font-size: 45rpx;
+  font-weight: bold;
+  margin-left: 20rpx;
+}
+.foodSrc{
+  height: 80rpx;
+  width:80rpx;
+  margin-left: 20rpx;
+}
+.foodDay{
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.day{
+  font-size: 35rpx;
+}

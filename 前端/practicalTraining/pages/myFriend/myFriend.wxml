@@ -1,0 +1,78 @@
+<!--pages/myFriend/myFriend.wxml-->
+<view>
+  <view class="all">
+    <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+    <text class="title1" bindtap="left">返回</text>
+    <text class="pagetitle">我的好友</text>
+  </view>
+  <view>
+    <view class="up">
+      <view bindtap="concern">
+        <view class="{{!fans?'':'word'}}">关注</view>
+        <view wx:if="{{!fans}}" class="line"></view>
+      </view>
+      <view bindtap="fan">
+        <view class="{{fans?'':'word'}}">粉丝</view>
+        <view wx:if="{{fans}}" class="line"></view>
+      </view>
+    </view>
+    <view>
+      <!-- 关注列表 -->
+      <view wx:if="{{!fans}}">
+        <view class="search">
+          <input class="input" placeholder="搜索已关注的人" bindinput="searchtext" />
+          <image src="../../icon/sport/search.png" style="width:40rpx" mode="widthFix" bindtap="search" />
+        </view>
+        <view>
+          <view style="margin-top: 10px;font-size: small;margin-left: 10px;margin-bottom: 20px;">正在关注</view>
+        </view>
+        <view>
+          <view class="item" wx:if="{{!ifSearch}}" wx:for="{{concern}}" wx:key="index">
+            <view class="item1">
+              <image src="{{item.concern[0].avatar}}" class="avatar"></image>
+              <view style="margin-left: 10px;">
+                <view>{{item.concern[0].username}}</view>
+                <view style="font-size: small;color: rgb(197, 197, 197);margin-top: 7px;">{{item.concern[0].signature}}</view>
+              </view>
+            </view>
+            <view wx:if="{{item.ifConcerned}}" class="concern" bindtap="delConcern" data-info="{{item}}">已关注</view>
+            <view wx:if="{{!item.ifConcerned}}" class="concern2" bindtap="conConcern" data-info="{{item}}">+关注</view>
+          </view>
+          <view class="item" wx:if="{{ifSearch}}" wx:for="{{searchContent}}" wx:key="index">
+            <view class="item1">
+              <image src="{{item.src}}" class="avatar"></image>
+              <view style="margin-left: 10px;">
+                <view>{{item.userName}}</view>
+                <view style="font-size: small;color: rgb(197, 197, 197);margin-top: 7px;">{{item.introduction}}</view>
+              </view>
+            </view>
+            <view wx:if="{{item.ifConcerned}}" class="concern" bindtap="delConcern" data-info="{{item}}">已关注</view>
+            <view wx:if="{{!item.ifConcerned}}" class="concern2" bindtap="conConcern" data-info="{{item}}">+关注</view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 粉丝列表 -->
+      <view wx:if="{{fans}}">
+        <view>
+          <view style="margin-top: 10px;margin-left: 10px;margin-bottom: 20px;">
+            <text style="color: rgb(160, 160, 160);">共</text>
+            <text>{{length}}</text>
+            <text style="color: rgb(160, 160, 160);">个粉丝</text>
+          </view>
+        </view>
+        <view class="item" wx:for="{{fans}}" wx:key="index">
+          <view class="item1">
+            <image src="{{item.fans[0].avatar}}" class="avatar"></image>
+            <view style="margin-left: 10px;">
+              <view>{{item.fans[0].username}}</view>
+              <view style="font-size: small;color: rgb(197, 197, 197);margin-top: 7px;">{{item.fans[0].signature}}</view>
+            </view>
+          </view>
+          <view wx:if="{{item.ifConcern}}" class="concern" bindtap="delUser" data-info="{{item}}">已关注</view>
+          <view wx:if="{{!item.ifConcern}}" class="concern2" bindtap="concernUser" data-info="{{item}}">+关注</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

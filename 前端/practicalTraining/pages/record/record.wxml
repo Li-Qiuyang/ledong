@@ -1,0 +1,64 @@
+<!--pages/record/record.wxml-->
+<view class="overall">
+  <image class="left" src="../../icon/left.png" bindtap="left"></image>
+  <text class="page-title">运动记录</text>
+</view>
+<view class="header">
+  <view class="show" bindtap="choose">
+    <text class="txt">{{name}}</text>
+    <image class="down" src="../../icon/down.png" />
+  </view>
+  <view class="content" wx:if="{{!arrow}}">
+    <view class="{{item.id == id ? 'active' : ''}}" wx:for="{{sport}}" wx:key="index" bindtap="chooseContent" data-datavalue="{{item}}">
+      {{item.name}}
+    </view>
+  </view>
+</view>
+<view class="middle">
+  <view class="mid1">
+    <view class="txt1">累计公里</view>
+    <view>
+      <text class="txt2">{{allMeters}}</text>
+      <text>公里</text>
+    </view>
+  </view>
+  <view class="mid2">
+    <view class="txt1">累计次数</view>
+    <view>
+      <text class="txt2">{{allNum}}</text>
+      <text>次</text>
+    </view>
+  </view>
+</view>
+<view class="bottom">
+  <view>
+    <text class="bottom_txt">运动记录</text>
+  </view>
+  <view class="record">
+    <view>{{date}}</view>
+  </view>
+  <view class="mapArea" wx:if="{{content.length != 0}}">
+    <map id="map" style="width: 100%; height: 450px;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" covers="{{covers}}" polyline="{{polyline}}" scale="18" show-compass="true" show-scale="true">
+    </map>
+    <view class="btn">
+      <view class="change">
+        <image class="btn1" bindtap="left1" src="../../icon/left.png"></image>
+      </view>
+      <view class="change">
+        <image class="btn1" bindtap="right1" src="../../icon/right.png"></image>
+      </view>
+    </view>
+    <view class="bottom2">
+      <view class="bottom1">
+        <view>
+          <text style="font-weight: bolder;font-size: 80rpx;margin-left: 20rpx;">{{data.distance}}</text>
+          <text>公里</text>
+        </view>
+        <view style="width: 180rpx;">
+          <image class="author" src="{{avatar}}"></image>
+          <view>{{data.date}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

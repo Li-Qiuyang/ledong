@@ -1,0 +1,65 @@
+<!--pages/foodDirary/foodDirary.wxml-->
+<view class="overall">
+  <image class="left" src="../../icon/left.png" bindtap="left"></image>
+  <text class="title" bindtap="left">返回</text>
+  <text class="page-title">饮食日记</text>
+</view>
+  <view class="containers">
+    <view class="count">
+      <view class="header">
+        <picker mode="date" header-text="选择时间" value="{{date}}" bindchange="changeDate">
+        <view class="date">
+          <text>{{date}}</text>
+          <image class="down" src="../../icon/down.png"></image>
+        </view>
+        </picker>
+      </view>
+      <view class="middle">
+        <view class="txt" style="margin-left: 20rpx;">
+          <text>已摄入</text>
+          <text class="kcal_txt">{{getKcal}}</text>
+          <text>千卡</text>
+        </view>
+        <view>
+          <canvas class="canvas" style="width:{{canvasWidth}}px;height:{{canvasHeight}}px;" canvas-id="circleBar"></canvas>
+        </view>
+        <view class="txt" style="margin-right: 20rpx;">
+          <text>运动消耗</text>
+          <text class="kcal_txt">{{reduceKcal}}</text>
+          <text>千卡</text>
+        </view>
+      </view>
+      <view class="bottom">
+        <view class="txt" style="margin-left: 20rpx;">
+          <text>碳水化合物</text>
+          <text>{{foodCarbohyrate}}</text>
+        </view>
+        <view class="txt">
+          <text>蛋白质</text>
+          <text>{{foodProtein}}</text>
+        </view>
+        <view class="txt" style="margin-right: 20rpx;">
+          <text>脂肪</text>
+          <text>{{foodFat}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="food">
+      <view class="food_header">饮食记录</view>
+      <view style="display:flex;margin-top: 10rpx;">
+        <view wx:for="{{day}}" wx:key = "index" bindtap="chooseDay" data-datavalue="{{item}}" class="day">
+          <view style="color: {{name == item.name ? '#5E94E4' : 'black'}};margin-left: 10rpx;">{{item.name}}{{item.name != '晚餐' ? "/":''}}</view>
+        </view>
+      </view>
+      <view wx:for="{{food}}" wx:key = "index" bindtap="chooseFood" data-datavalue="{{item}}"  class="foodDay">
+        <view style="display: flex;">
+          <image class="foodSrc" src="{{item.foodSrc}}"></image>
+          <view style="margin-left: 30rpx;">
+            <view>{{item.foodName}}</view>
+            <view>{{item.weight}}克</view>
+          </view>
+        </view>
+        <view style="margin-right: 40rpx;">{{item.foodEnergy}}千卡</view>
+      </view>
+    </view>
+  </view>

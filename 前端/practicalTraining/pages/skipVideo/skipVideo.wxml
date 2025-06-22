@@ -1,0 +1,13 @@
+<!--pages/skipVideo/skipVideo.wxml-->
+<view class="gif">
+  <image id="video" class="skip_img" src="{{url}}"></image>
+</view>
+<view class="{{isShow?'count':'all'}}">
+  <text class="num">{{skipNum}}</text>
+  <text class="nums">{{allNum?'/'+allNum:''}}</text>
+</view>
+<text class="{{isShow?'countdown':'count'}}">{{countdown}}</text>
+<view class="{{isShow?'count':'timer'}}">{{showMin}}:{{showSec}}</view>
+<view class="{{isShow?'count':'pause'}}" bindtap="modalFinish">
+  <image src="../../icon/map/pause.png" class="pause_img"></image>
+</view>

@@ -1,0 +1,106 @@
+<view class="box">
+  <image src="../../images/background.jpg" class="back-img"></image>
+  <image class="left" src="../../icon/left.png" bindtap="left"></image>
+</view>
+<view class="ava">
+  <view class="text">
+    <view>没有健康,</view>
+    <view>快乐会大打折扣</view>
+  </view>
+  <image src="{{head}}" class="avatar"></image>
+</view>
+<view class="height">
+  <view class="part">
+    <view style="display: flex;justify-content: space-between;align-items: center;">
+      <view style="margin-left: 20px;">
+        <view style="background-color: rgb(110,159,231);width: 50px;height: 50px;text-align: center;border-radius: 50%;margin-bottom: 10px;">
+          <image src="{{src}}" class="sport"></image>
+        </view>
+        <view style="font-weight: bold;">最近运动：{{title}}</view>
+      </view>
+      <view>
+        <view class="demo" bindtap="chooseHeight">
+          <image src="../../icon/basicInformation/height.png" mode="aspectFill" class="icon"></image>
+          <view>{{height}}cm</view>
+        </view>
+        <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+            <view class="content">
+              <milliliter-input id="ctrlmill1" float="{{true}}" unitName="身高" unitVal="cm" max="{{200}}" val="{{recordnum2}}" value="{{recordnum2}}"></milliliter-input>
+              <view style="display: flex;">
+                <view class="confirm" bindtap="cancel">取消</view>
+                <view class="confirm" bindtap="confirm">确定</view>
+              </view>
+            </view>
+          </view>
+        <view class="demo" bindtap="chooseWeight">
+          <image src="../../icon/basicInformation/weight.png" mode="aspectFill" class="icon"></image>
+          <view>{{weight}}kg</view>
+        </view>
+        <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus2}}">
+            <view class="content">
+              <milliliter-input id="ctrlmill2" float="{{false}}" unitName="体重" unitVal="kg" max="{{100}}" val="{{recordnum1}}" value="{{recordnum1}}"></milliliter-input>
+              <!-- <milliliter-input id="ctrlmill2" float="{{true}}" unitName="体重" unitVal="kg" max="{{200}}" val="{{recordnum2}}" value="{{recordnum2}}"></milliliter-input> -->
+              <view style="display: flex;">
+                <view class="confirm" bindtap="cancel2">取消</view>
+                <view class="confirm" bindtap="confirm2">确定</view>
+              </view>
+            </view>
+          </view>
+        <view class="demo" style="font-weight: bold;">
+          <view>BMI指数：{{BMI}}</view>
+        </view>
+      </view>
+    </view>
+    <view style="height: 10px;"></view>
+    <view class="my" bindtap="mySport">
+      <text style="margin-left: 20px;">全部运动记录</text>
+      <image src="../../icon/point.png" style="width: 20px;height: 15px;margin-right: 20px;"></image>
+    </view>
+  </view>
+  <view>
+    <view style="display: flex;">
+      <view class="body">
+        <canvas type="webgl" style="position:fixed;width: {{cavansWidth}}px;height: {{cavansHeight}}px;top: {{canvasTop}}px;left: {{canvasLeft}}px;" id="c" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" bindtouchcancel="touchCancel" bindlongtap="longTap" bindtap="tap"></canvas>
+      </view>
+      <view class="items">
+        <view class="item">
+          <image src="../../icon/basic1.png" class="img"></image>
+          <view style="margin-left: 30px;">
+            <view style="font-weight: bold;font-size: large;">步数</view>
+            <view style="font-weight: bolder;margin-top: 15px;font-size: small;">{{step}}步</view>
+          </view>
+        </view>
+        <view class="item2" bindtap="water">
+          <image src="../../icon/basic2.png" class="img"></image>
+          <view style="margin-left: 30px;">
+            <view style="font-weight: bold;font-size: large;">饮水量</view>
+            <view style="font-weight: bolder;margin-top: 15px;font-size: small;">{{water}}ml</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view style="display: flex;justify-content: space-between;margin-left: 3%;margin-right: 3%;">
+      <view class="parts">
+        <view style="width: 46px;height: 46px;background-color: white;border-radius: 50%;margin-left: 30px;margin-top: 10px;">
+          <image src="../../icon/basic3.png" class="img2"></image>
+        </view>
+        <view style="font-weight: bold;font-size: large;color: white;margin-top: 10px;">卡路里</view>
+        <view style="font-weight: bolder;margin-top: 15px;font-size: small;color: white;">{{energy}} kilocalorie</view>
+      </view>
+      <view class="parts2">
+        <view style="width: 46px;height: 46px;background-color: white;border-radius: 50%;margin-left: 30px;margin-top: 10px;">
+          <image src="../../icon/basic4.png" class="img2"></image>
+        </view>
+        <view style="font-weight: bold;font-size: large;color: white;margin-top: 10px;">睡眠</view>
+        <view style="font-weight: bolder;margin-top: 15px;font-size: small;color: white;">睡眠质量一般</view>
+      </view>
+      <view class="parts3">
+        <view style="width: 46px;height: 46px;background-color: white;border-radius: 50%;margin-left: 30px;margin-top: 10px;">
+          <image src="../../icon/basic5.png" class="img2"></image>
+        </view>
+        <view style="font-weight: bold;font-size: large;color: white;margin-top: 10px;">心率</view>
+        <view style="font-weight: bolder;margin-top: 15px;font-size: small;color: white;">心率 70次/分</view>
+      </view>
+    </view>
+  </view>
+</view>

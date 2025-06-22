@@ -1,0 +1,12 @@
+<view class="index">
+  <image src="../../images/background.png" class='img'></image>
+  <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+    <view class="title0">欢迎来到乐动</view>
+    <view class="title1">坚持运动 乐享生活</view>
+    <view class="title2">Ready Go ！</view>
+  </view>
+  <view class="start" bindtap="start">
+    <text bindtap="start">下一步</text>
+    <image src="../../icon/white-right.png" mode="aspectFill" class="right" bindtap="start"></image>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+/* pages/prepare/prepare.wxss */
+page{
+  background-color: #D2E1FF;
+}
+.whole{
+  margin-top: 50%;
+  display: flex;
+  justify-content: center;
+}
+.countdown{
+  font-size: 500rpx;
+  font-weight: bolder;
+  color: white;
+}

@@ -1,0 +1,31 @@
+<!--pages/map/map.wxml-->
+<view class="mapArea">
+   <map
+        class="map"
+        style="width: 100%; height: 810px;"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        markers="{{markers}}"
+        covers="{{covers}}"
+        show-location="true"  
+        polyline="{{polyline}}"
+        show-compass="true"
+        show-scale="true"
+        >
+      <view class="header">
+        <view class="cChild">
+          <view class="child1">
+            <view class="time">{{time}}</view>
+            <view class="txt">总时长</view>
+          </view>
+          <view>
+            <view class="dis">{{distance}}</view>
+            <view class="txt">公里</view>
+          </view>
+        </view>
+      </view>
+      <view class="bottom">
+        <button bindtap="back" style="width: 70rpx;height: 70rpx;margin-right: 40rpx;"class="back">×</button>
+      </view>
+    </map>
+</view>

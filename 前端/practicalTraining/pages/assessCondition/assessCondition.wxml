@@ -1,0 +1,160 @@
+<!--pages/assessCondition/assessCondition.wxml-->
+<view>
+  <view class="all">
+    <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+    <text class="title1" bindtap="left">返回</text>
+    <text class="pagetitle">评估身体现状</text>
+  </view>
+  <view>
+    <!-- 进度条 -->
+    <view class="lines">
+      <view class="{{itemId>=1?'line1':'line'}}"></view>
+      <view class="{{itemId>=2?'line1':'line'}}"></view>
+      <view class="{{itemId>=3?'line1':'line'}}"></view>
+      <view class="{{itemId>=4?'line1':'line'}}"></view>
+      <view class="{{itemId>=5?'line1':'line'}}"></view>
+      <view class="{{itemId>=6?'line1':'line'}}"></view>
+    </view>
+    <view wx:if="{{itemId==1}}">
+      <view style="display: flex; align-items: center; margin-top: 30px;">
+        <image src="../../icon/w8.png" class="avatar"></image>
+        <view class="info">
+          为了推荐专属于你的训练计划，请先完善个人信息~
+        </view>
+      </view>
+      <view>
+        <view class="goal">你练习的目标是？</view>
+        <view style="height: 100px;"></view>
+        <view wx:for="{{goal}}" wx:key="index">
+          <view class="{{goalId==item.id?'items1':'items'}}" bindtap="choose1" data-info="{{item}}">
+            <image class="img" src="{{item.src}}"></image>
+            <view>
+              <view>{{item.title}}</view>
+              <view style="font-size: small;color: rgb(179, 179, 179);">{{item.info}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{itemId==2}}">
+      <view wx:if="{{goalId==1}}">
+        <view class="goal">你当下的体型接近于</view>
+        <view style="height: 100px;"></view>
+        <view style="display: flex;justify-content: space-between;margin-left: 20px;margin-right: 20px;">
+          <image wx:for="{{nowBody}}" wx:key="index" src="{{item.src}}" data-info="{{item}}" bindtap="choose2" class="{{nowBodyId==item.id?'img22':'img2'}}" mode="heightFix"></image>
+        </view>
+      </view>
+      <view wx:if="{{goalId==2}}">
+        <view class="goal">是否有失眠、焦虑等问题</view>
+        <view style="height: 100px;"></view>
+        <view wx:for="{{problem}}" wx:key="index">
+          <view class="{{problemId==item.id?'items1':'items'}}" bindtap="choose7" data-info="{{item}}">
+            <image class="img4" src="{{item.src}}"></image>
+            <view>{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{goalId==3}}">
+        <view class="goal">是否有久坐的情况？</view>
+        <view style="height: 100px;"></view>
+        <view wx:for="{{sit}}" wx:key="index">
+          <view class="{{sitId==item.id?'items1':'items'}}" bindtap="choose9" data-info="{{item}}">
+            <image class="img4" src="{{item.src}}"></image>
+            <view>{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{goalId==4}}">
+        <view class="goal">你最想提升哪方面技能？</view>
+        <view style="height: 100px;"></view>
+        <view wx:for="{{improve}}" wx:key="index">
+          <view class="{{improveId==item.id?'items1':'items'}}" bindtap="choose11" data-info="{{item}}">
+            <image class="img6" src="{{item.src}}"></image>
+            <view>{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{itemId==3}}">
+      <view wx:if="{{nowBodyId!=0}}">
+        <view class="goal">你的目标体型状态</view>
+        <view style="height: 100px;"></view>
+        <view style="display: flex;justify-content: space-between;margin-left: 20px;margin-right: 20px;">
+          <image wx:for="{{goalBody}}" wx:key="index" src="{{item.src}}" data-info="{{item}}" bindtap="choose3" class="{{goalBodyId==item.id?'img22':'img2'}}" mode="heightFix"></image>
+        </view>
+      </view>
+      <view wx:if="{{problemId!=0}}">
+        <view class="goal">你想解决的身体问题</view>
+        <view style="height: 100px;"></view>
+        <view wx:for="{{bodyProblem}}" wx:key="index">
+          <view class="{{bodyProblemId==item.id?'items1':'items'}}" bindtap="choose8" data-info="{{item}}">
+            <image class="img5" src="{{item.src}}"></image>
+            <view>{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{sitId!=0}}">
+        <view class="goal">日常是否有不良的站姿或坐姿习惯？</view>
+        <view style="height: 100px;"></view>
+        <view wx:for="{{habbit}}" wx:key="index">
+          <view class="{{habbitId==item.id?'items1':'items'}}" bindtap="choose10" data-info="{{item}}">
+            <image class="img4" src="{{item.src}}"></image>
+            <view>{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{improveId!=0}}">
+        <view class="goal">你想解决的身体问题</view>
+        <view style="height: 100px;"></view>
+        <view wx:for="{{bodyProblem}}" wx:key="index">
+          <view class="{{bodyProblemId==item.id?'items1':'items'}}" bindtap="choose8" data-info="{{item}}">
+            <image class="img5" src="{{item.src}}"></image>
+            <view>{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{itemId==4}}">
+      <view>
+        <view class="goal">你想练习/调理/纠正的部位</view>
+        <view style="height: 100px;"></view>
+        <view wx:for="{{place}}" wx:key="index">
+          <view class="{{placeId==item.id?'items1':'items'}}" bindtap="choose4" data-info="{{item}}">
+            <image class="img3" src="{{item.src}}"></image>
+            <view>
+              <view>{{item.title}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{itemId==5}}">
+      <view wx:if="{{placeId!=0}}">
+        <view class="goal">选择你所处的瑜伽阶段</view>
+        <view style="height: 100px;"></view>
+        <view wx:for="{{stage}}" wx:key="index">
+          <view class="{{stageId==item.id?'items12':'items2'}}" bindtap="choose5" data-info="{{item}}">
+            <image class="img" src="{{item.src}}"></image>
+            <view>
+              <view>{{item.title}}</view>
+              <view style="font-size: small;color: rgb(179, 179, 179);">{{item.info}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view>
+      <view wx:if="{{itemId==6}}">
+        <view wx:if="{{stageId!=0}}">
+          <view class="goal">你希望每次练习多久</view>
+          <view style="height: 100px;"></view>
+          <view wx:for="{{time}}" wx:key="index">
+            <view class="{{timeId==item.id?'items1':'items'}}" bindtap="choose6" data-info="{{item}}">
+              <view style="margin-left: 39%;">{{item.title}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

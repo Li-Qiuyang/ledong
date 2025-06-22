@@ -1,0 +1,178 @@
+<!--pages/homepage/homepage.wxml-->
+<view class="overall1">
+  <view class="up">
+    <view>
+      <image src="../../images/my-back.jpg" class="back"></image>
+      <view class="all">
+        <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+        <text class="title1" bindtap="left">返回</text>
+        <text class="pagetitle">个人主页</text>
+      </view>
+      <view class="middle">
+        <view style="display: flex;">
+          <image src="{{head}}" bindtap="preview1" class="img" data-src="{{head}}"></image>
+          <view>
+            <view class="name">{{name}}</view>
+            <view class="signature">{{signature}}</view>
+          </view>
+        </view>
+        <view wx:if="{{id !== currentId}}" class="right1">
+          <view style="font-size: small;color: white;" bindtap="concern">{{isConcern ?'已关注':'+关注'}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="items">
+      <view class="item" bindtap="fan">
+        <view class="word">{{fans}}</view>
+        <view class="word">粉丝</view>
+      </view>
+      <view class="item" bindtap="concerns">
+        <view class="word">{{concern}}</view>
+        <view class="word">关注</view>
+      </view>
+      <view class="item">
+        <view class="word">{{likeNum}}</view>
+        <view class="word">获赞</view>
+      </view>
+    </view>
+    <view style="display: flex;justify-content: space-between;align-items: center;">
+      <view class="mark">
+        <view class="part2" wx:for="{{haveTag}}" wx:key="index">
+          <text class="tags">{{item}}</text>
+        </view>
+      </view>
+      <image wx:if="{{id == currentId}}" src="../../icon/addTag.png" class="addTag" bindtap="clickme"></image>
+    </view>
+    <!--屏幕背景变暗的背景  -->
+    <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+    <!--弹出框  -->
+    <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+      <view class="text_addTag">我的标签</view>
+      <view style="display: flex;flex-wrap: wrap;">
+        <view class="label" wx:for="{{haveTag}}" wx:key="index" style="margin-left: 15px;display:flex;" class="tag">
+          <text>{{item}}</text>
+          <image data-label="{{item}}" class="delTag" bindtap="delTag" src="../../icon/delTag.png"></image>
+        </view>
+      </view>
+      <view class="text_addTag">添加标签</view>
+      <view style="display: flex;flex-wrap: wrap;">
+        <view class="label" wx:for="{{label}}" wx:key="index" style="margin-left: 10px;">
+          <text data-label="{{item}}" style="color: {{item.color}};" class="tag" bindtap="tag">{{item.tag}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="titles">
+      <view class="{{currindex==item.id?'head1':'head'}}" wx:for="{{title}}" wx:key="index" data-list="{{item}}" bindtap="type">
+        <view>{{item.word}}</view>
+        <view class="{{currindex==item.id?'line':'line1'}}"></view>
+      </view>
+    </view>
+    <view class="{{currindex==item.id?'content':'content1'}}" wx:for="{{title}}" wx:key="index">
+      <!-- 动态 -->
+      <view wx:if="{{currindex==1}}">
+        <scroll-view style=" height:460px" scroll-y="true">
+          <view wx:for="{{content}}" wx:key="index">
+            <view class="info">
+              <image src="{{head}}" class="img2"></image>
+              <view class="infomation">
+                <view>{{name}}</view>
+                <view class="time">{{item.data.time}}</view>
+              </view>
+              <view class="right" wx:if="{{id == currentId}}">
+                <image style="height: 60rpx;width: 60rpx;" src="../../icon/dy_choose.png" bindtap="by_choose" data-item="{{item}}"></image>
+                <!--动态选择弹出框  -->
+                <view animation="{{animationData}}" class="choose_box" wx:if="{{item.by_choose}}">
+                  <view class="right_btn" style="margin-right: 30rpx;" bindtap="delete" data-item='{{item}}'>
+                    <image src="../../icon/del.png" class="img_btn"></image>
+                    <text class="txt_btn">删除</text>
+                  </view>
+                  <view class="right_btn" style="margin-right: 30rpx;" bindtap="edit" data-item='{{item}}'>
+                    <image src="../../icon/edit.png" class="img_btn"></image>
+                    <text class="txt_btn">编辑</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="publish" data-item='{{item}}' bindtap="remark">
+              <textarea auto-height="true" class="txt_title" value="{{item.data.title}}"></textarea>
+              <textarea auto-height="true" class="txt_content" value="{{item.data.content}}"></textarea>
+              <view style="display: flex;flex-wrap: wrap;" wx:if="{{item.imgs[0]}}" class="imglist">
+                <view class="imgs" wx:for="{{item.imgs}}" wx:key="index" style="display: flex;">
+                  <image src="{{item}}" class="imgss"></image>
+                </view>
+              </view>
+            </view>
+            <view class="frame">
+              <view style="display: flex;" bindtap="forward" data-item="{{item}}">
+                <image src="{{item.forwardJudge?'../../icon/content6.png':'../../icon/content5.png'}}" class="contents"></image>
+                <view>{{item.forward}}</view>
+              </view>
+              <view style="display: flex;">
+                <image src="../../icon/content2.png" class="contents" data-item='{{item}}' bindtap="remark"></image>
+                <view>{{item.comment}}</view>
+              </view>
+              <view style="display: flex;">
+                <image src="{{item.likeJudge?'../../icon/content4.png':'../../icon/content3.png'}}" class="contents" bindtap="like" data-item='{{item}}'></image>
+                <view>{{item.like}}</view>
+              </view>
+            </view>
+            <view class="lines"></view>
+          </view>
+        </scroll-view>
+      </view>
+      <!-- 相册 -->
+      <view wx:elif="{{currindex==2}}">
+        <scroll-view scroll-y="true" style="height: 460px;">
+          <view wx:for="{{content}}" wx:key="index">
+            <text class="time2">{{item.data.time}}</text>
+            <view class="imglist">
+              <view wx:for="{{item.imgs}}" wx:key="index">
+                <image src="{{item}}" class="picture" bindtap="preview" data-src="{{item}}"></image>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <!-- 收藏 -->
+      <view wx:else>
+        <scroll-view style="height:460px" scroll-y="true">
+          <view wx:for="{{collect}}" wx:key="index">
+            <view class="info">
+              <image src="{{item.user[0].avatar}}" class="img2"></image>
+              <view class="infomation">
+                <view>{{item.user[0].username}}</view>
+                <view class="time">{{item.data.time}}</view>
+              </view>
+            </view>
+            <view class="publish" data-item='{{item}}' bindtap="remark">
+              <textarea auto-height="true" class="txt_title" value="{{item.data.title}}"></textarea>
+              <textarea auto-height="true" class="txt_content" value="{{item.data.content}}"></textarea>
+              <view style="display: flex;flex-wrap: wrap;" wx:if="{{item.imgs[0]}}" class="imglist">
+                <view class="imgs" wx:for="{{item.imgs}}" wx:key="index" style="display: flex;">
+                  <image src="{{item}}" class="imgss"></image>
+                </view>
+              </view>
+            </view>
+            <view class="frame">
+              <view style="display: flex;" bindtap="col_forward" data-item="{{item}}">
+                <image src="{{item.forwardJudge?'../../icon/content6.png':'../../icon/content5.png'}}" class="contents"></image>
+                <view>{{item.forward}}</view>
+              </view>
+              <view style="display: flex;">
+                <image src="../../icon/content2.png" class="contents" data-item='{{item}}' bindtap="remark"></image>
+                <view>{{item.comment}}</view>
+              </view>
+              <view style="display: flex;">
+                <image src="{{item.likeJudge?'../../icon/content4.png':'../../icon/content3.png'}}" class="contents" bindtap="col_like" data-item='{{item}}'></image>
+                <view>{{item.like}}</view>
+              </view>
+            </view>
+            <view class="lines"></view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>

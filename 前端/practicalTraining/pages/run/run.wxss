@@ -1,0 +1,74 @@
+/* pages/run/run.wxss */
+.canvas{
+  display: block;
+  margin: 0 auto;
+}
+.middle{
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.distance{
+  margin-left: 70rpx;
+}
+.speed{
+  margin-right: 70rpx;
+}
+.text1{
+  font-size: 50rpx;
+  font-weight: bolder;
+}
+.text2{
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.bottom{
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mapPic{
+  height: 80rpx;
+  width: 80rpx;
+  margin-top: 10rpx;
+  margin-left: 7rpx;
+}
+.btn_pause,.btn_finish,.btn_keep{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  text-align: center;
+}
+.btn_finish{
+  margin-right: 50rpx;
+}
+.btn_pause{
+  background-color: grey;
+}
+.btn_finish{
+  background-color: red;
+}
+.btn_keep{
+  background-color: rgb(71, 221, 71);
+}
+.pause,.finish,.keep{
+  margin-top: 30rpx;
+  height: 50rpx;
+  width: 50rpx;
+}
+.txt{
+  margin-top:-5rpx;
+  font-size: 25rpx;
+  color: white;
+  font-weight: bolder;
+}
+.bottom1{
+  border-radius: 10%;
+  position: absolute;
+  height: 350rpx;
+  bottom: 2px;
+  width: 100%;
+  background-color: white;
+}

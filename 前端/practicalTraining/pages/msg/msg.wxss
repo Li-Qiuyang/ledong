@@ -1,0 +1,58 @@
+/* pages/msg/msg.wxss */
+.avater {
+  margin-top: 10px;
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 12px;
+  border-radius: 50%;
+}
+
+.list {
+  margin: 9px;
+}
+
+.item {
+  margin-bottom: 10px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+}
+
+.name {
+  font-size: 15px;
+}
+
+.txt_infor {
+  width: 450rpx;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  margin-right: 20rpx;
+  color: #666;
+  font-size: 12px;
+}
+
+.time {
+  font-size: 10px;
+  color: #999;
+}
+
+.detail {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 70px;
+  height: 70px;
+}
+
+.msg_img{
+  height: 60px;
+  width: 60px;
+}
+
+.demo {
+  margin-left: 10rpx;
+}
+
+.detail view {
+  color: #666;
+  font-size: 14px;
+}

@@ -1,0 +1,92 @@
+/* pages/login/login.wxss */
+page {
+  width: 100%;
+  background-color: #CAE2FA;
+}
+
+.all {
+  height: 30px;
+  background-color: white;
+  padding-top: 70rpx;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.left1 {
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 30rpx;
+  margin-right: 10rpx;
+}
+
+.title1 {
+  font-size: 35rpx;
+  margin-right: 170rpx;
+}
+
+.pagetitle {
+  font-size: 35rpx;
+  /* z-index: 1; */
+}
+
+.avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.item {
+  background-color: rgba(78, 187, 238, 0.2);
+  border: 1px solid rgb(255, 255, 255);
+  height: 50px;
+  border-radius: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 20px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.item1 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.avatar-wrapper {
+  background-color: transparent;
+}
+
+.weui-input {
+  width: 200px;
+  margin-right: 5px;
+  margin-left: 20px;
+}
+
+.input {
+  width: 200px;
+  margin-right: 5px;
+  margin-left: 20px;
+}
+
+.submit {
+  color: white;
+  font-weight: normal;
+  background-color: #5E94E4;
+  border-radius: 30px;
+}
+
+.line {
+  width: 90%;
+  background-color: white;
+  height: 1px;
+  margin-left: 5%;
+}
+
+.tip {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}

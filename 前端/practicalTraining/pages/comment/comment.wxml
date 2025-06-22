@@ -1,0 +1,73 @@
+<view class="all">
+  <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+  <text class="title1" bindtap="left">返回</text>
+  <text class="pagetitle">详情</text>
+</view>
+<view class="content">
+  <view wx:for="{{value}}" wx:for-index="index" wx:key="index" data-datavalue="{{item}}">
+    <view class="infor_all">
+      <view class="infomation">
+        <image bindtap="other" data-item="{{item}}" src="{{item.user[0].avatar}}" class="avatarItem"></image>
+        <view>
+          <view style="font-size: large;">{{item.user[0].username}}</view>
+          <view class="other">{{item.data.time}}</view>
+        </view>
+      </view>
+      <view wx:if="{{item.data.ismine}}" bindtap="delete" data-item='{{item}}'>
+        <image src="../../icon/del.png" style="width: 50rpx;height: 50rpx;"></image>
+      </view>
+      <view class="right" wx:if="{{!item.data.ismine}}">
+        <view style="font-size: small;color: white;" data-item='{{item}}' bindtap="concern">{{item.concern?'已关注':'+关注'}}</view>
+      </view>
+    </view>
+    <view class="publish">
+      <textarea auto-height="true" class="txt_title" value="{{item.data.title}}"></textarea>
+      <textarea auto-height="true" class="txt_content" value="{{item.data.content}}"></textarea>
+      <view style="display: flex;flex-wrap: wrap;" wx:if="{{item.imgs[0]}}">
+        <view class="imgs" wx:for="{{item.imgs}}" style="display: flex;" wx:key="index">
+          <image src="{{item}}" class="img" mode="heightFix" bindtap="preview" data-src="{{item}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="four">
+      <view class="downPart" bindtap="forward" data-item="{{item}}">
+        <image src="{{item.forwardJudge?'../../icon/content6.png':'../../icon/content5.png'}}" class="contents"></image>
+        <view>{{item.forward}}</view>
+      </view>
+      <view class="downPart">
+        <image src="../../icon/content2.png" class="contents" bindtap="remark" data-item='{{item}}'></image>
+        <view>{{item.comment}}</view>
+      </view>
+      <view class="downPart">
+        <image src="{{item.likeJudge?'../../icon/content4.png':'../../icon/content3.png'}}" class="contents" bindtap="like" data-item='{{item}}'></image>
+        <view>{{item.like}}</view>
+      </view>
+    </view>
+    <view class="line"></view>
+    <scroll-view scroll-y="true" class="good-course" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+      <view wx:for="{{comment}}" wx:key="index">
+        <view class="infomation">
+          <image src="{{item.user2[0].avatar}}" class="avatarItems"></image>
+          <view class="comment1">
+            <view style="font-size: small;color: #666; margin-right: 20rpx;">{{item.user2[0].username}}</view>
+            <view class="demo">
+              <textarea auto-height="true" class="content2" value="{{item.data.discussContent}}"></textarea>
+            </view>
+            <view style="margin-top: -10rpx;display: flex;justify-content: space-between;align-items: center;">
+              <view style="font-size: 20rpx; color: #666;">{{item.data.time}}</view>
+              <image src="../../icon/del.png" style="height: 40rpx;width: 40rpx;margin-right: 15px;" wx:if="{{item.delJudge}}" bindtap="del_com" data-item='{{item}}'></image>
+            </view>
+          </view>
+        </view>
+        <view class="line"></view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<image bindtap="ShowInput" src="../../icon/publish.png" class="publish-img"></image>
+<view class="input-section" wx:if="{{isShowInput}}">
+  <input class='input_input' model:value="{{inputValue}}" focus="auto" placeholder="请输入内容" bindinput='input' bindblur="onHideInput" />
+  <view style="height:110rpx;width:170rpx;display:flex; align-items: center;justify-content: center;">
+    <button class="btn" size="mini" bindtap="submit">添加</button>
+  </view>
+</view>

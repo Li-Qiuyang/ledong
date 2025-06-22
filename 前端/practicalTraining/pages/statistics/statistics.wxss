@@ -1,0 +1,180 @@
+/* pages/statistics/statistics.wxss */
+@font-face {
+  font-family: "阿里妈妈东方大楷 Regular";
+  font-weight: 300;
+  src: url("//at.alicdn.com/wf/webfont/BRlc6TE5BhNq/qRKzPpRu7p4e.woff2") format("woff2"),
+    url("//at.alicdn.com/wf/webfont/BRlc6TE5BhNq/p4UC51aIiGGt.woff") format("woff");
+  font-display: swap;
+}
+
+page {
+  background-color: #CAE2FA;
+}
+
+.pages {
+  height: 100%;
+}
+
+.img {
+  width: 260px;
+}
+
+.up {
+  height: 35%;
+  overflow: hidden;
+}
+
+.word1 {
+  font-size: larger;
+  margin-bottom: 10px;
+  letter-spacing: 4rpx;
+  font-family: "阿里妈妈东方大楷 Regular";
+}
+
+.word2 {
+  font-size: smaller;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.down {
+  height: 65%;
+  background-color: white;
+  border-radius: 80px 0 0 0;
+}
+
+.info {
+  margin-left: 40px;
+}
+
+.sex {
+  display: flex;
+  align-items: center;
+  width: 75px;
+  height: 30px;
+  margin-right: 30px;
+  border-radius: 20px;
+}
+
+.sex1 {
+  display: flex;
+  align-items: center;
+  width: 75px;
+  height: 30px;
+  margin-left: 30px;
+  border-radius: 20px;
+}
+
+.sex2 {
+  display: flex;
+  align-items: center;
+  width: 75px;
+  height: 30px;
+  margin-left: 30px;
+  border-radius: 20px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.submit {
+  color: white;
+  font-weight: normal;
+  background-color: #5E94E4;
+  border-radius: 30px;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.3;
+}
+
+.modalDlg {
+  width: 75%;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imgs {
+  width: 248rpx;
+  margin: 30rpx auto 0 auto;
+}
+
+.btn {
+  color: white;
+  font-weight: normal;
+  background-color: #5E94E4;
+  border-radius: 30px;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+
+
+/*对话框 */
+.commodity_attr_box {
+  height: 30%;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+}
+.confirm{
+  margin: 0 auto;
+  border-radius: 20rpx;
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 34rpx;
+  background-color: #D2E1FF;
+}
+.content {
+  width: 100%;
+  height: 100%;
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+}
+
+.content .txt {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 25rpx;
+}
+
+.content .txt .getNum {
+  width: 100%;
+  text-align: center;
+}
+
+.content .txt input {
+  border: 1rpx solid #000000;
+}

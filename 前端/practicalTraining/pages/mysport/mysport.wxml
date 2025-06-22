@@ -1,0 +1,89 @@
+<!--pages/mysport/mysport.wxml-->
+<view>
+  <view class="overall">
+    <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+    <text class="title1" bindtap="left">返回</text>
+    <text class="pagetitle">我的运动</text>
+  </view>
+  <view class="box">
+    <scroll-view scroll-y="true" class="good-course" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+      <view class="sport">
+        <view class="section">
+          <picker mode="date" value="{{date}}" start="2023-01-01" end="{{today}}" bindchange="bindDateChange">
+          <view class="date">日期</view>
+            <view style="display: flex;">
+              <view class="picker">{{date}}</view>
+              <image src='../../icon/down.png' class="down"></image>
+            </view>
+          </picker>
+        </view>
+        <view style="margin-top: 40rpx;margin-bottom: 10px; font-size: 33rpx;">运动表现</view>
+        <view style="color: #666; font-size: 28rpx;" wx:for="{{timeList}}">
+          <view>{{item.name}}：{{item.value}}min</view>
+        </view>
+        <view style="margin-top: 20rpx;margin-bottom: 10px; font-size: 33rpx;">活动热量</view>
+        <text style="font-size: 40rpx; margin-right: 10rpx; font-weight: bold;">{{calorie}}</text>
+        <text style="color: #666; font-size: 28rpx;">千卡</text>
+
+        <view class="ec-container">
+          <ec-canvas id="mychart" canvas-id="echart-pie" ec="{{ec}}"></ec-canvas>
+        </view>
+      </view>
+
+      <view>
+        <label class="label" wx:for="{{item}}" wx:key="{{item.value}}">
+          <view class="planitems">
+            <view style="display: flex; align-items: center;" bindtap="changeDone" data-sId="{{item.sId}}" data-isDone="{{item.isDone}}">
+              <checkbox checked="{{item.isDone}}"/>
+              <view class="name">{{item.name}}</view>
+            </view>
+            <image class="del" src="../../icon/delete.png" bindtap="delSchedule" data-sId="{{item.sId}}"></image>
+          </view>
+        </label>
+      </view>
+
+      <view class="sport" style="text-align: center;" bindtap="bindViewTap">+添加日程</view>
+      <view>
+        <modal title="添加日程" hidden="{{modalHidden}}" confirm-text="确定" cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel">
+          <view style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+            <view class="add1" style="background-color: {{backgroundColor[0]}};" bindtap="addsport" id="跑步" data-index='0'>跑步</view>
+            <view class="add1" style="background-color: {{backgroundColor[1]}};" bindtap="addsport" id="骑行" data-index='1'>骑行</view>
+            <view class="add1" style="background-color: {{backgroundColor[2]}};" bindtap="addsport" id="行走" data-index='2'>行走</view>
+            <view class="add" style="background-color: {{backgroundColor[3]}};" bindtap="addfood" data-index='3'>饮食日程</view>
+            <view class="add" bindtap="addplan">健身课程</view>
+          </view>
+          {{data.showWindows.Content}}
+        </modal>
+        <view class="plan">
+          <view class="plan-title">让减脂更高效</view>
+          <view class="planbox sport" bindtap="exam">
+            <view style="display: flex;align-items: center;">
+              <image src="../../icon/sport/plan.png" style="width: 35rpx;height: 35rpx; margin-right: 20rpx;"></image>
+              <view>智能定制专属减脂计划</view>
+            </view>
+            <view style="display: flex; margin-top: 30rpx;">
+              <view class="plans">
+                <view style="font-size: small; color: #666;">每周训练</view>
+                <view>3-5天</view>
+              </view>
+              <view class="plans">
+                <view style="font-size: small; color: #666;">每日饮食</view>
+                <view>三餐推荐</view>
+              </view>
+              <view class="plans">
+                <view style="font-size: small; color: #666;">预计消耗</view>
+                <view>30000+千卡</view>
+              </view>
+            </view>
+            <view class="test">
+              <view>立即评估，获取个性化定制减脂方案</view>
+            </view>
+          </view>
+          <view class="ec-con">
+            <ec-canvas id="mychart2" canvas-id="echart-line" ec="{{ec2}}"></ec-canvas>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

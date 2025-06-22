@@ -1,0 +1,83 @@
+<!--pages/feedback/feedback.wxml-->
+<view>
+  <view class="all">
+    <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+    <text class="title1" bindtap="left">返回</text>
+    <text class="pagetitle">意见反馈</text>
+  </view>
+  <view wx:if="{{submitContent==1}}">
+    <view wx:if="{{!choose}}">
+      <view class="up">
+        <view class="up1" bindtap="classify">
+          <view>所属分类<text style="color: rgb(131, 131, 131);">(必填)</text></view>
+          <view style="display: flex;align-items: center;" wx:if="{{!haveChosen}}">
+            <view style="margin-right: 5px;color: rgb(131, 131, 131);">请选择分类</view>
+            <image src="../../icon/point.png" class="point"></image>
+          </view>
+        </view>
+        <view class="choice" wx:if="{{haveChosen}}" wx:for="{{list}}" wx:key="index">
+          <label class="checkbox">
+            <checkbox value="cb" /><text style="margin-left: 6px;">{{item}}</text>
+          </label>
+        </view>
+        <view style="height: 10px;"></view>
+      </view>
+      <view class="middle">
+        <view style="height: 15px;"></view>
+        <textarea placeholder="请仔细描述你的问题" class="input" bindinput='getContent'></textarea>
+      </view>
+      <view class="bottom">
+        <view wx:for="{{pics}}" wx:key="index">
+          <image src="{{deleteImg}}" style="position: absolute;margin-left: 20rpx;margin-top: 10rpx;width: 40rpx;height: 40rpx;background-color: rgba(17, 17, 17, 0.2);border-radius: 50%;" bindtap="deleteItem" data-src="{{item}}"></image>
+          <image src="{{item}}" class="imgs" bindtap="preview" data-src="{{item}}"></image>
+        </view>
+        <view bindtap="add" class="add">+</view>
+      </view>
+      <view>
+        <button style="width: 96%;" class="button" bindtap="submit">提交反馈</button>
+      </view>
+    </view>
+    <view wx:if="{{choose}}">
+      <view bindtap="back" class="item">
+        <view style="height: 15px;"></view>
+        <view class="itemContent">
+          返回反馈页
+        </view>
+        <view style="height: 15px;"></view>
+      </view>
+      <view bindtap="select" class="item" wx:for="{{problem}}" wx:key="index" data-id="{{item.id}}">
+        <view style="height: 15px;"></view>
+        <view class="itemContent">
+          <view>
+            <view>{{item.title}}</view>
+            <view style="font-size: small;color: rgb(167, 167, 167);margin-top:5px;">{{item.content}}</view>
+          </view>
+          <image src="../../icon/point.png" class="image"></image>
+        </view>
+        <view style="height: 15px;"></view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{submitContent==2}}" style="text-align: center;margin-top: 200px;">
+    <image src="../../icon/successful.png" class="success"></image>
+    <view style="text-align: center;font-size: larger;">反馈提交成功</view>
+    <view style="text-align: center;color: rgb(255, 255, 255);margin-top: 10px;">我们将尽快处理，您的意见对产品优化非常重要</view>
+    <view style="display: flex;align-items: center;margin-top: 30px;">
+      <button style="width: 45%;background-color: white;" class="button1" bindtap="button1">返回主页</button>
+      <button style="width: 45%;background-color:#5E94E4;color: white;" class="button1" bindtap="button2">查看反馈</button>
+    </view>
+  </view>
+  <view wx:if="{{submitContent==3}}">
+    <view class="answer">
+      <view style="height: 15px;"></view>
+      <view style="margin-left: 10px;margin-right: 10px;">
+        <view style="display: flex;justify-content: space-between;align-items: center;">
+          <view style="color: rgb(207, 207, 207);font-size: small;">待回复</view>
+          <view style="color: rgb(207, 207, 207);font-size: small;">2023-05-30 10:14:56</view>
+        </view>
+        <view style="margin-top: 5px;">详细描述！</view>
+      </view>
+      <view style="height: 15px;"></view>
+    </view>
+  </view>
+</view>

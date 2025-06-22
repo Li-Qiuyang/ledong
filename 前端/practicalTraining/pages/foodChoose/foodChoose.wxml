@@ -1,0 +1,140 @@
+<view class="overall">
+  <image class="left" src="../../icon/left.png" bindtap="left"></image>
+  <text class="title" bindtap="left">返回</text>
+  <text class="page-title">{{title}}打卡</text>
+</view>
+<view>
+  <view class="search">
+    <input class="input" placeholder="请输入想要查找的内容" bindinput="content" />
+    <image src="../../icon/sport/search.png" style="width:50rpx" mode="widthFix" bindtap="search" />
+  </view>
+  <view class='select'>
+    <view class='select-left'>
+      <view class="{{active==0?'selected':''}}" id="0" bindtap='switchNav'>全部</view>
+      <view class="{{active==1?'selected':''}}" id="1" bindtap='switchNav'>肉蛋奶</view>
+      <view class="{{active==2?'selected':''}}" id="2" bindtap='switchNav'>蔬菜</view>
+      <view class="{{active==3?'selected':''}}" id="3" bindtap='switchNav'>水果</view>
+      <view class="{{active==4?'selected':''}}" id="4" bindtap='switchNav'>主食</view>
+    </view> 
+
+    <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+      <view class="content">
+        <view>
+          <view class="food-tit">
+            <image src="../../icon/cha.png" style="width: 50rpx; height: 50rpx;" bindtap="cancel"></image>
+            <view style="font-weight: bold; font-size: 46rpx;margin-left: 30vw;">{{keep.foodName}}</view>
+          </view>
+          <view class="demo">
+            <view>
+              <view style="font-size: 34rpx; font-weight: bold;">{{keep.foodEnergy}}千卡</view>
+              <view style="font-size: 30rpx; color: #666;">100克</view>
+            </view>
+            <view>
+              <view>碳水</view>
+              <view style="font-size: 30rpx; color: #666;">{{keep.foodCarbohyrate}}克</view>
+            </view>
+            <view>
+              <view>蛋白质</view>
+              <view style="font-size: 30rpx; color: #666;">{{keep.foodProtein}}克</view>
+            </view>
+            <view>
+              <view>脂肪</view>
+              <view style="font-size: 30rpx; color: #666;">{{keep.foodFat}}克</view>
+            </view>
+          </view>
+        </view>
+        <view style="display: flex; align-items: center; justify-content: center;">
+          <input class="input2" type='text' placeholder="1.0" bindinput="weight" auto-focus />
+          <text style="color: #666;">克</text>
+        </view>
+        <view style="display: flex;">
+          <view class="confirm" bindtap="confirm">确定</view>
+        </view>
+      </view>
+    </view>
+    <view class='right'> 
+      <swiper current='{{currentTab}}' vertical='{{true}}'> 
+        <swiper-item id="0" catchtouchmove="false">
+          <scroll-view scroll-y="true" class="good-course" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+            <view wx:for="{{food}}" wx:key="index" bindtap="chooseFood" data-datavalue="{{item}}" class="food">
+              <view>
+                <image class="foodSrc" src="{{item.foodSrc}}"></image>
+              </view>
+              <view>
+                <view style="font-size: 35rpx; margin-bottom: 5rpx;">{{item.foodName}}</view>
+                <view style="font-size: 28rpx; color: #666;">{{item.foodEnergy}}千卡/100g</view>
+              </view>
+              <view>
+                <image class="plus" src="../../icon/plus.png" bindtap="chooseFood" data-datavalue="{{item}}"></image>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <swiper-item id="1" catchtouchmove="false">
+          <scroll-view scroll-y="true" class="good-course" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+            <view wx:for="{{food}}" wx:key="index" bindtap="chooseFood" data-datavalue="{{item}}" class="food">
+              <view>
+                <image class="foodSrc" src="{{item.foodSrc}}"></image>
+              </view>
+              <view>
+                <view>{{item.foodName}}</view>
+                <view>{{item.foodEnergy}}千卡/100g</view>
+              </view>
+              <view>
+                <image class="plus" src="../../icon/plus.png" bindtap="chooseFood"></image>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <swiper-item id="2" catchtouchmove="false">
+          <scroll-view scroll-y="true" class="good-course" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+            <view wx:for="{{food}}" wx:key="index" bindtap="chooseFood" data-datavalue="{{item}}" style="display: flex;margin-right: 20rpx;" class="food">
+              <view>
+                <image class="foodSrc" src="{{item.foodSrc}}"></image>
+              </view>
+              <view>
+                <view>{{item.foodName}}</view>
+                <view>{{item.foodEnergy}}千卡/100g</view>
+              </view>
+              <view>
+                <image class="plus" src="../../icon/plus.png" bindtap="chooseFood"></image>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>      
+        <swiper-item id="3" catchtouchmove="false">
+          <scroll-view scroll-y="true" class="good-course" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+            <view wx:for="{{food}}" wx:key="index" bindtap="chooseFood" data-datavalue="{{item}}" style="display: flex;margin-right: 20rpx;" class="food">
+              <view>
+                <image class="foodSrc" src="{{item.foodSrc}}"></image>
+              </view>
+              <view>
+                <view>{{item.foodName}}</view>
+                <view>{{item.foodEnergy}}千卡/100g</view>
+              </view>
+              <view>
+                <image class="plus" src="../../icon/plus.png" bindtap="chooseFood"></image>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>      
+        <swiper-item id="4" catchtouchmove="false">
+          <scroll-view scroll-y="true" class="good-course" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+            <view wx:for="{{food}}" wx:key="index" bindtap="chooseFood" data-datavalue="{{item}}" style="display: flex;margin-right: 20rpx;" class="food">
+              <view>
+                <image class="foodSrc" src="{{item.foodSrc}}"></image>
+              </view>
+              <view>
+                <view>{{item.foodName}}</view>
+                <view>{{item.foodEnergy}}千卡/100g</view>
+              </view>
+              <view>
+                <image class="plus" src="../../icon/plus.png" bindtap="chooseFood"></image>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>  
+      </swiper> 
+    </view>
+  </view>
+</view>

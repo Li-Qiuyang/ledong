@@ -1,0 +1,16 @@
+
+<view class="overall">
+    <image class="left" src="../../icon/left.png" bindtap="left"></image>
+    <text class="title" bindtap="left">返回</text>
+    <text class="page-title">我的愿望</text>
+</view>
+
+<view class="list">
+    <block wx:for="{{mywish}}" wx:key="key" wx:for-item="item">
+        <view class="mywish">
+            <image src="../../icon/mywish.png" class="star"></image>
+            <text>{{item.name}}</text>
+            <image src="../../icon/del.png" class="delete" bindtap="delete" id="{{item.id}}"></image>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,20 @@
+<view class="box">
+    <image class="left" src="../../icon/whiteleft.png" bindtap="left"></image>
+    <text class="page-title" style="margin-left:270rpx">心愿墙</text>
+    <image src="../../images/wishbackground.png" class="back-img"></image>
+</view>
+<view class="view">
+  <block wx:for="{{bulletChatData}}" a:key="id">
+    <view style="animation: first 8s linear forwards;top:{{item.top}}%;" class="wish">
+      <image src="{{item.avatar}}" class="img" style="animation: first 8s linear forwards;"></image>
+      <view class="item"  style="animation: first 8s linear forwards;">{{item.text}}</view>
+    </view>
+  </block>
+</view>
+
+
+<view class="button">
+    <button bindtap="mywish" class="button1">我的</button>
+    <input placeholder='请输入您的愿望 . . .' type="text" class="input"  bindinput='getValue' value="{{title}}"/>
+    <button bindtap="send" class="button2">许愿</button>
+</view>

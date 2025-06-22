@@ -1,0 +1,237 @@
+/* pages/my/my.wxss */
+page {
+  height: 100%;
+}
+
+.overall1 {
+  background-color: #CAE2FA;
+  height: 100%;
+}
+
+.head1 {
+  height: 130rpx;
+  background-color: white;
+}
+
+.head2 {
+  background-color: #CAE2FA;
+}
+
+.up {
+  display: flex;
+  align-items: center;
+  margin-left: 14px;
+  height: 20%;
+}
+
+.image {
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  margin-top: 30px;
+}
+
+.image1 {
+  width: 14px;
+  height: 14px;
+  margin-top: -8px;
+}
+
+.login {
+  margin-left: 20px;
+  margin-top: 30px;
+  display: flex;
+}
+
+.down {
+  width: 94%;
+  height: 45%;
+  background-color: white;
+  margin-left: 3%;
+  margin-top: 10rpx;
+  border-radius: 10px;
+}
+
+.nickName {
+  margin-left: 20px;
+  margin-top: 38px;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.signature {
+  color: gray;
+  font-size: small;
+  margin-top: 8px;
+  width: 175px;
+}
+
+.point {
+  margin-top: 30px;
+}
+
+.person {
+  font-size: small;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+
+.head {
+  display: flex;
+  margin-left: 30px;
+}
+
+.back {
+  font-size: small;
+  margin-top: 5px;
+  margin-left: 50px;
+}
+
+.back2 {
+  font-size: small;
+  margin-top: 5px;
+  margin-left: 25px;
+  display: flex;
+  align-items: center;
+  color: #1a53bd;
+}
+
+.item2 {
+  width: 30px;
+  height: 30px;
+}
+
+.item {
+  width: 30px;
+  height: 30px;
+  margin-top: 20px;
+}
+
+.downItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.items2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.down1 {
+  height: 5px;
+  width: 100%;
+}
+
+.imgs {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+
+.items {
+  margin-bottom: 20px;
+  margin-left: 30rpx;
+  background-color: white;
+  width: 37.5%;
+  margin-left: 3%;
+  padding: 20rpx 30rpx;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.demo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weight {
+  font-size: 33rpx;
+  margin-bottom: 10rpx;
+}
+
+.weightnum {
+  font-weight: bold;
+  font-size: 50rpx;
+  margin-right: 13rpx;
+}
+
+
+/*对话框 */
+.commodity_attr_box {
+  height: 30%;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+}
+
+.confirm {
+  margin: 0 auto;
+  border-radius: 20rpx;
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 34rpx;
+  background-color: #D2E1FF;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+}
+
+.content .txt {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 25rpx;
+}
+
+.content .txt .getNum {
+  width: 100%;
+  text-align: center;
+}
+
+.content .txt input {
+  border: 1rpx solid #000000;
+}
+
+.red_circle {
+  position: absolute;
+  right: -15rpx;
+  top: -15rpx;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 20rpx;
+  text-align: center;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+}
+
+.img_div {
+  position: relative;
+  margin: auto;
+}

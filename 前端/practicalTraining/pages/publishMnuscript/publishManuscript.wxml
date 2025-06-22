@@ -1,0 +1,61 @@
+<!--pages/publishMnuscript/publishManuscript.wxml-->
+<view>
+  <view class="all">
+    <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+    <text class="title1" bindtap="left">返回</text>
+    <text class="pagetitle">分享</text>
+  </view>
+  <view class="bottom">
+    <view class="up">
+      <view>
+        <view style="height: 30px;"></view>
+        <input type="text" placeholder="填写标题会获得更多阅读量哦~" class="input1" value="{{title}}" bindinput='getTitle' />
+        <view class="line"></view>
+        <textarea placeholder="分享新鲜事..." class="input2" bindinput='getContent' value="{{content}}"></textarea>
+        <view>
+          <scroll-view style="height:280px" scroll-y="true">
+            <view class="addition">
+              <view wx:for="{{pics}}" wx:key="indexx">
+                <image src="{{deleteImg}}" style="position: absolute;margin-left: 20rpx;margin-top: 10rpx;width: 40rpx;height: 40rpx;background-color: rgba(17, 17, 17, 0.2)" bindtap="deleteItem" data-src="{{item}}"></image>
+                <image src="{{item}}" class="img" bindtap="preview" data-src="{{item}}"></image>
+              </view>
+              <view class="add" bindtap="add" wx:if="{{show}}">+</view>
+            </view>
+          </scroll-view>
+          <view wx:if="{{isAddress}}" class="address">
+            <image class="image" src="../../icon/address.png"></image>
+            {{address}}
+            <image src="../../icon/dele.png" style="width: 36rpx; height: 36rpx; margin-left: 20rpx;" mode="aspectFill" bindtap="delete"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="down">
+      <view style="height: 20px;"></view>
+      <view class="item">
+        <view class="outer">
+          <image class="imgs" src="../../icon/w5.png"></image>
+        </view>
+        <view bindtap="clickme">选话题</view>
+        <!--屏幕背景变暗的背景  -->
+        <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+        <!--弹出框  -->
+        <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+          <view class="topic">
+            <view wx:for="{{subject}}">
+              <view data-topic="{{item}}" bindtap="topics" class="items">{{item}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="outer" style="margin-left: 40px;">
+          <image class="imgs" src="../../icon/w4.png"></image>
+        </view>
+        <view bindtap="getLocation">在哪里</view>
+      </view>
+      <view style="height: 20px;"></view>
+      <view style="height: 30px;"></view>
+      <button bindtap="publish" class="button" style="width: 80%;">发布</button>
+    </view>
+  </view>
+
+</view>

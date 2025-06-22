@@ -1,0 +1,43 @@
+<!--pages/classMute/classMute.wxml-->
+<view>
+  <view class="all">
+    <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+    <text class="title1" bindtap="left">返回</text>
+    <text class="pagetitle">智能课表</text>
+  </view>
+  <view class="up">
+    <view class="part1">
+      <view class="up1">{{date}}{{name}}</view>
+      <view style="margin-top: 6px;font-size: small;color: rgb(160, 160, 160);">凡不能毁灭我的，必使我强大。</view>
+    </view>
+    <image src="../../icon/f1.png" class="welcome" mode="widthFix"></image>
+  </view>
+  <view>
+    <scroll-view style=" height:600px" scroll-y="true">
+      <!-- 第一天 -->
+      <view class="border" wx:for="{{line}}" wx:key="index">
+        <view class="day">
+          <view class="line"></view>
+          <view>{{item.day}}</view>
+        </view>
+        <view class="item" wx:for="{{item.class}}" wx:key="index" bindtap="watch" data-info="{{item}}">
+          <view>
+            <view>{{item.lessonname}}</view>
+            <view style="margin-top:6px;color: rgb(167, 167, 167);">{{item.time}}分钟 {{item.info}}千卡</view>
+          </view>
+          <image src="{{item.url}}" class="class"></image>
+        </view>
+      </view>
+      <view class="border1">
+        <view class="day">
+          <view class="line"></view>
+          <view>阶段结束</view>
+        </view>
+        <view style="text-align: center;">
+          <image src="../../icon/f2.png" class="bottom" mode="widthFix"></image>
+        </view>
+      </view>
+      <view style="height: 20px;"></view>
+    </scroll-view>
+  </view>
+</view>

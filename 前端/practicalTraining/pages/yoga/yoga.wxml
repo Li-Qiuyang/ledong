@@ -1,0 +1,104 @@
+<!--pages/yoga/yoga.wxml-->
+<view>
+  <view class="all">
+    <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+    <text class="title1" bindtap="left">返回</text>
+    <text class="pagetitle">瑜伽</text>
+  </view>
+  <view class="up">
+    <view class="practice">我的练习</view>
+    <view class="top">今日目标</view>
+    <view class="card">
+      <view style="display: flex;justify-content: space-between;">
+        <view></view>
+        <image src="../../icon/point.png" class="point" bindtap="point"></image>
+      </view>
+      <view style="display: flex;justify-content: space-between;">
+        <view>
+          <view style="display: flex;">
+            <view class=" line"></view>
+            <view style="color: rgb(62, 112, 170);">{{total}}分钟</view>
+          </view>
+          <view style="display: flex;align-items: flex-end">
+            <view>
+              <text style="font-size:30px;margin-right: 5px;margin-left: 10px;">{{now}}</text>
+              <text style="margin-right: 5px;">/</text>
+              <text>{{total}}</text>
+            </view>
+            <picker range="{{range}}" bindchange="changes">
+              <image src="../../icon/w6.png" style="width: 20px;height: 20px;margin-left: 10px;"></image>
+            </picker>
+          </view>
+        </view>
+        <view class="ec-container">
+          <ec-canvas id="mychart" canvas-id="echart-pie" ec="{{ec}}" force-use-old-canvas="true"></ec-canvas>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="down">
+    <view style="height: 15px;"></view>
+    <view style="display: flex;align-items: center;">
+      <view class="list">智能课表</view>
+      <view class="day" wx:if="{{hasSchedule}}">第{{day}}/28天</view>
+    </view>
+    <view class="section">
+      <picker mode="date" value="date" bindchange="bindDateChange">
+        <view class="picker">
+          <view class="time">
+            <image src="../../icon/w7.png" class="date"></image>
+            <view>{{date}}</view>
+          </view>
+        </view>
+      </picker>
+    </view>
+    <view class="downPart">
+      <view style="height: 10px;"></view>
+      <view wx:if="{{hasSchedule}}">
+        <view class="work1" wx:for="{{line.class}}" wx:key="index" bindtap="watch" data-info="{{item}}">
+          <view style="display: flex;align-items: center;">
+            <view class="line3"></view>
+            <view class="leftItem">
+              <view style="height: 8px;"></view>
+              <view class="part1">{{item.lessonname}}</view>
+              <view class="part2">
+                <text>{{item.time}}分钟 </text>
+                <text>{{item.info}}千卡</text>
+              </view>
+            </view>
+          </view>
+          <view class="rightItem">
+            <view class="cover"></view>
+            <image src="{{item.url}}" class="image2"></image>
+          </view>
+        </view>
+        <view style="margin-top: 17px;text-align: center;display: flex;margin-left: 40%;align-items: center;">
+          <view bindtap="class">查看更多</view>
+          <image src="../../icon/point.png" style="width: 14px;height: 14px;margin-left: 10px;"></image>
+        </view>
+      </view>
+      <view wx:else="{{!hasSchedule}}" bindtap="assess">
+        <view class="else">
+          <view class="line2"></view>
+          <view class="test">
+            <view>评估身体现状，为你量身定制训练内容</view>
+            <view>学生专属 · 瘦全身计划</view>
+          </view>
+        </view>
+        <view style="margin-left: 15px;margin-top: 5px;font-size: small;color: rgb(175, 175, 175);">按照日程跟练，可以逐步提升训练效果</view>
+      </view>
+      <view style="height:25px;"></view>
+    </view>
+    <view>
+      <view style="margin-left: 10px;margin-top: 25px;margin-bottom: 10px;font-size: larger;">推荐练习</view>
+      <scroll-view scroll-y="true" class="scroll">
+        <view class="items">
+          <view class="item" wx:for="{{lesson}}" wx:key="index">
+            <image src="{{item.url}}" class="appearance" data-info="{{item}}" bindtap="into"></image>
+            <text class="word">{{item.lessonname}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

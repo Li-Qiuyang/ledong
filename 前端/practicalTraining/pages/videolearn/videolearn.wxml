@@ -1,0 +1,4 @@
+<video src="{{url}}" id="Video" object-fit="cover" class="video" bindfullscreenchange="screenchange" bindplay="start" bindpause="stop" bindended="bindended"></video>
+<text class="{{isShow?'countdown':'count'}}" style="{{countdown=='go'?'left: 34%;':'left: 44%;top: 10%'}}">{{countdown}}</text>
+<!-- <text class="{{isShow?'count':'timer'}}">已经运动：{{num}}</text> -->
+<view class="{{isShow?'count':'timer'}}">您已运动：{{showHour}}:{{showMin}}:{{showSec}}</view>

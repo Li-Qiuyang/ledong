@@ -1,0 +1,99 @@
+/* pages/searchCourse/searchCourse.wxss */
+.con{
+  background-color:#D2E1FF
+}
+.good-course{
+  width: 100vw;
+}
+.video{
+  display: flex;
+
+}
+.course-img{
+  width:340rpx;
+  height: 200rpx;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+  margin-top: 10rpx;
+  margin-right: 20rpx;
+}
+.classtitle{
+  font-size: 46rpx;
+  /* font-weight: bold; */
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+.titletxt{
+  font-size: 32rpx;
+  color: #666;
+  margin-left: 20rpx;
+}
+.tit{
+  margin-left: 40rpx;
+  font-size: large;
+}
+.text{
+  margin-top: 20rpx;
+  font-size: 36rpx;
+}
+.search {
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.demo{
+  margin-top: 50rpx;
+  background-color: white;
+  width: 91vw;
+  border-radius: 30rpx;
+  display: flex;
+  padding: 8rpx;
+  align-items: center;
+}
+.enter{
+  background-color: #5E94E4;
+  height: 80rpx;
+  width: 130rpx;
+  color: white;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 36rpx;
+  border-radius: 20rpx;
+  margin-left: 220rpx;
+}
+.enter-img{
+  width: 60px;
+  height: 60px;
+  margin-left: 30rpx;
+}
+.scroll {
+  display: inline-block;
+  width:100%;
+  height:1050rpx;
+  text-align: center;
+}
+.box{
+  background-color: white;
+  border-radius: 42rpx;
+  padding: 30rpx;
+  margin-top: 5rpx;
+}
+.input {
+  margin-left: 10rpx;
+  background-color: white;
+  width: 640rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  padding-left: 10rpx;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10rpx;
+  margin-right: 15rpx;
+}
+
+.top{
+  width: 100%;
+  padding: 30rpx;
+  height: 300rpx;
+}

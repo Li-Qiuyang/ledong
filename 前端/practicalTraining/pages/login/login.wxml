@@ -1,0 +1,23 @@
+<!--pages/login/login.wxml-->
+<view>
+  <view class="all">
+    <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+    <text class="title1" bindtap="left">返回</text>
+    <text class="pagetitle">注册页</text>
+  </view>
+  <view class="item1">
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image class="avatar" src="{{avatarUrl}}"></image>
+      <view style="font-weight: lighter;font-size: small;">欢迎你来！</view>
+    </button>
+  </view>
+  <view class="item">
+    <image src="../../icon/e2.png" class="tip"></image>
+    <input type="nickname" value="{{value}}" bind:change="getNickname" class="weui-input" placeholder="请输入昵称" />
+  </view>
+  <view class="item">
+    <image src="../../icon/e1.png" class="tip"></image>
+    <input type="text" value="{{value2}}" bindinput="getSignature" class="input" placeholder="请输入个性签名" />
+  </view>
+  <button style="width: 80%;" class="submit" bindtap="submit">确定</button>
+</view>

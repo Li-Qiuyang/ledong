@@ -1,0 +1,63 @@
+/* pages/setting/setting.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #CAE2FA;
+}
+
+.overall1 {
+  height: 100%;
+}
+
+.all {
+  height: 30px;
+  background-color: white;
+  padding-top: 70rpx;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.left1 {
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 30rpx;
+  margin-right: 10rpx;
+}
+
+.title1 {
+  font-size: 35rpx;
+  margin-right: 190rpx;
+}
+
+.pagetitle {
+  font-size: 35rpx;
+  /* z-index: 1; */
+}
+
+.items {
+  margin-top: 40px;
+}
+
+.item {
+  margin-top: 30px;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  margin-top: 50px;
+  color: white;
+  font-weight: normal;
+  background-color: #5E94E4;
+  border-radius: 30px;
+}
+
+.point {
+  width: 13px;
+  height: 13px;
+}

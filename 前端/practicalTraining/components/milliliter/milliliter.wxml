@@ -1,0 +1,144 @@
+<view class="content" wx:if="{{isShow}}">
+
+  <view class="box">
+    <scroll-view scroll-x class="scroll-x" id="scroll-view" enhanced="{{true}}" bounces="{{false}}"
+      scroll-left="{{scrollLeft}}" show-scrollbar="{{false}}" bindscroll="bindscroll">
+      <view class="column  long opacity-hide">
+        <view class="line"></view>
+      </view>
+      <view class="column short opacity-hide">
+        <view class="line"></view>
+      </view>
+      <view class="column short opacity-hide">
+        <view class="line"></view>
+      </view>
+      <view class="column short opacity-hide">
+        <view class="line"></view>
+      </view>
+      <view class="column short opacity-hide">
+        <view class="line"></view>
+      </view>
+      <view class="column  long opacity-hide">
+        <view class="line"></view>
+      </view>
+      <view class="column short opacity-hide">
+        <view class="line"></view>
+      </view>
+      <view class="column short opacity-hide">
+        <view class="line"></view>
+      </view>
+      <view class="column short opacity-hide">
+        <view class="line"></view>
+      </view>
+      <view class="column short opacity-hide">
+        <view class="line"></view>
+      </view>
+
+      <block wx:for="{{endNum - startNum + 1}}">
+        <block wx:if="{{item%5 == 0}}">
+          <view class="column long">
+            <view class="line"></view>
+            <view class="val">{{item + startNum}}</view>
+          </view>
+          <view class="column short {{(item == (endNum - startNum))? 'opacity-hide' : ''}}">
+            <view class="line"></view>
+          </view>
+          <view class="column short {{(item == (endNum - startNum))? 'opacity-hide' : ''}}">
+            <view class="line"></view>
+          </view>
+          <view class="column short {{(item == (endNum - startNum))? 'opacity-hide' : ''}}">
+            <view class="line"></view>
+          </view>
+          <view class="column short {{(item == (endNum - startNum))? 'opacity-hide' : ''}}">
+            <view class="line"></view>
+          </view>
+        </block>
+      </block>
+
+
+      <!-- <view class="column long">
+                    <view class="val">0</view>
+                </view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+
+                <view class="column long">
+                    <view class="val">5</view>
+                </view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+
+                <view class="column long">
+                    <view class="val">10</view>
+                </view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+
+                <view class="column long">
+                    <view class="val">15</view>
+                </view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+
+                <view class="column long">
+                    <view class="val">20</view>
+                </view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+
+                <view class="column long">
+                    <view class="val">25</view>
+                </view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+
+                <view class="column long">
+                    <view class="val">30</view>
+                </view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+                <view class="column short"></view>
+                <view class="column short"></view> -->
+
+      <view class="column  long opacity-hide">
+        <view class="line"></view>
+      </view>
+      <view class="column short opacity-hide">
+        <view class="line"></view>
+      </view>
+      <view class="column short opacity-hide">
+        <view class="line"></view>
+      </view>
+      <view class="column short opacity-hide">
+        <view class="line"></view>
+      </view>
+      <view class="column short opacity-hide">
+        <view class="line"></view>
+      </view>
+      <view class="column  long opacity-hide">
+        <view class="line"></view>
+      </view>
+    </scroll-view>
+  </view>
+  <image class="pointer" src="https://chaozhenrihuajianhang.oss-cn-hangzhou.aliyuncs.com/test/xiaochengxu/scaleplate/milliliter_pointer.png"></image>
+
+  <view class="shade-left"></view>
+  <!-- <view class="shade-left-hide" style="left:-{{shadeLeftPercent}}%;"></view> -->
+  <!-- <view class="shade-left-hide" style="transform: translateX(-{{shadeLeftPercent}}%);"></view> -->
+  <!-- <view class="shade-left-hide" style="width: {{shadeLeftPercent}}px;"></view> -->
+
+  <!-- <view class="shade-right-hide"></view> -->
+  <view class="shade-right"></view>
+</view>

@@ -1,0 +1,19 @@
+<!--pages/mood/mood.wxml-->
+<view>
+  <view class="all">
+    <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+    <text class="title1" bindtap="left">返回</text>
+    <text class="pagetitle">心情</text>
+  </view>
+  <view class="up" bindtap="choose">
+    <text>自定义心情</text>
+  </view>
+  <view class="down">
+    <view class="down2">
+      <view class="item" wx:for="{{list}}" wx:key="index" bindtap="mood" data-list="{{item}}">
+        <image src="{{item.src}}" class="img"></image>
+        <view>{{item.word}}</view>
+      </view>
+    </view>
+  </view>
+</view>

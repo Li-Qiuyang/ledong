@@ -1,0 +1,168 @@
+.foodSrc {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 10rpx;
+
+}
+
+.food {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10rpx;
+  margin-bottom: 20rpx;
+  height: 100rpx;
+  width: 480rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plus {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+/* pages/course/course.wxss */
+.search {
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+
+.input {
+  margin-left: 10rpx;
+  background-color: white;
+  width: 640rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  padding-left: 10rpx;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10rpx;
+  margin-right: 15rpx;
+}
+
+.select {
+  padding-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.text {
+  font-size: 40rpx;
+}
+
+.select-left {
+  width: 30%;
+  height: 83vh;
+  font-size: 30rpx;
+  border-right: 1px solid #eee;
+  background-color: #CAE2FA;
+}
+
+.select-left view {
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.selected {
+  border-right: 2px solid #fff;
+  font-weight: bold;
+  background-color: #5E94E4;
+  color: #fff;
+}
+
+.right {
+  width: 70%;
+  margin-left: 10rpx;
+}
+
+swiper {
+  height:81vh;
+  background-color: white;
+}
+
+.good-course {
+  width: 100vw;
+  height: 1300rpx;
+}
+
+.input2{
+  width: 100rpx;
+  height:60rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  margin-right: 20rpx;
+  border-bottom: 1px solid #666;
+  text-align: center;
+}
+/*对话框 */
+.commodity_attr_box {
+  height: 35%;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+}
+.confirm{
+  margin: 0 auto;
+  border-radius: 30rpx;
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 34rpx;
+  background-color: #5E94E4;
+  color: #fff;
+}
+.content {
+  width: 100%;
+  height: 100%;
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+}
+.demo{
+  margin-right: 30rpx; 
+  margin-left: 30rpx; 
+  margin-top: 20rpx; 
+  display: flex;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.food-tit{
+  width: 100%;
+  height: 100rpx;
+  align-items: center;
+  margin-top: 30rpx;
+   padding-left: 30rpx;
+   display: flex;
+}
+.content .txt {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 25rpx;
+}
+
+.content .txt .getNum {
+  width: 100%;
+  text-align: center;
+}
+
+.content .txt input {
+  border: 1rpx solid #000000;
+}

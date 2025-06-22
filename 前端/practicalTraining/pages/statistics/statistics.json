@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "milliliter": "../../components/milliliter/milliliter",
+    "milliliter-input": "../../components/milliliter-input/milliliter-input"
+  }
+}

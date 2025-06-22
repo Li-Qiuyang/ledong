@@ -1,0 +1,96 @@
+.item {
+  white-space: nowrap;
+  background-color: #D2E1FF;
+  padding: 20rpx;
+  border-radius: 30rpx;
+  /* position: absolute; */
+  animation-fill-mode: none;
+  animation-timing-function: linear;
+}
+.box{
+  padding-top: 110rpx;
+  padding-right: 25rpx;
+  display: flex;
+  height: 25px;
+  color: #fff;
+}
+.back-img {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-size: 100% 100%;
+  z-index: -1;
+}
+.img {
+  width: 85rpx;
+  height: 85rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+.wish{
+  position: absolute;
+  animation-fill-mode: none;
+  animation-timing-function: linear;
+  display: flex;
+}
+.view {
+  z-index: 3;
+  height: 20%;
+  width: 100%;
+  position: absolute;
+}
+
+@keyframes first {
+  from {
+    transform: translateX(750rpx);
+  }
+
+  to {
+    transform: translateX(-1000rpx);
+    display: none;
+  }
+}
+
+.input {
+  width: 170px;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  position: absolute;
+  margin-left: 170rpx;
+}
+
+.button {
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 4%;
+  width: 100%;
+  height: 40px;
+}
+
+.button1 {
+  position: absolute;
+  width: 140rpx;
+  height: 80rpx;
+  font-size: 16px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #6799FF;
+  flex: 1;
+}
+
+.button2 {
+  position: absolute;
+  right: 20px;
+  width: 140rpx;
+  height: 80rpx;
+  font-size: 16px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #6799FF;
+  flex: 1;
+}

@@ -1,0 +1,108 @@
+/* pages/myFriend/myFriend.wxss */
+.all {
+  height: 30px;
+  background-color: white;
+  padding-top: 70rpx;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.left1 {
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 30rpx;
+  margin-right: 10rpx;
+}
+
+.title1 {
+  font-size: 35rpx;
+  margin-right: 150rpx;
+}
+
+.pagetitle {
+  font-size: 35rpx;
+  /* z-index: 1; */
+}
+
+.up {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 15px;
+}
+
+.word {
+  color: rgb(211, 211, 211);
+}
+
+.line {
+  height: 2px;
+  width: 30px;
+  margin-top: 5px;
+  background-color: rgb(96, 165, 211);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  margin-left: 10px;
+  margin-top: 10px;
+  background-color: white;
+  width: 640rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  padding-left: 10rpx;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-bottom: 10rpx;
+  margin-right: 15rpx;
+}
+
+.item {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item1 {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.concern {
+  border: 1px solid rgb(194, 192, 192);
+  color: rgb(194, 192, 192);
+  font-size: small;
+  width: 70px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  border-radius: 30px;
+}
+
+.concern2 {
+  border: 1px solid #5E94E4;
+  background-color: #5E94E4;
+  color: white;
+  font-size: small;
+  width: 70px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  border-radius: 30px;
+}

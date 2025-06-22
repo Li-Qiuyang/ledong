@@ -1,0 +1,38 @@
+.star{
+    width: 30px;
+    height: 30px;
+    margin-right: 20rpx;
+}
+.list{
+    width: 100%;
+}
+.mywish{
+    padding-left: 10px;
+    border-bottom:1px solid #eee;
+    height: 40px;
+    width: 100%;
+    position: relative;
+}
+.delete{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    margin-top: -6px;
+    right: 20px;
+}
+.background{
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    background-size: 100% 100%;
+     z-index:-1;
+}
+.img{
+  width: 100%;
+  position: fixed;
+  opacity: 80%;
+  bottom:0
+}

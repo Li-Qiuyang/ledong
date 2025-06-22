@@ -1,0 +1,98 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mood/mood",
+    "pages/homepage/homepage",
+    "pages/setting/setting",
+    "pages/personalInformation/personalInformation",
+    "pages/sport/sport",
+    "pages/exam/exam",
+    "pages/food/food",
+    "pages/course/course",
+    "pages/searchCourse/searchCourse",
+    "pages/mysport/mysport",
+    "pages/square/square",
+    "pages/foodDirary/foodDirary",
+    "pages/foodChoose/foodChoose",
+    "pages/record/record",
+    "pages/aboutUs/aboutUs",
+    "pages/my/my",
+    "pages/obj/index",
+    "pages/publishMnuscript/publishManuscript",
+    "pages/map/map",
+    "pages/path/path",
+    "pages/prepare/prepare",
+    "pages/run/run",
+    "pages/startRun/startRun",
+    "pages/addplan/addplan",
+    "pages/video/video",
+    "pages/skip/skip",
+    "pages/yoga/yoga",
+    "pages/foodRecipe/foodRecipe",
+    "pages/skipVideo/skipVideo",
+    "pages/comment/comment",
+    "pages/myFriend/myFriend",
+    "pages/cube/index",
+    "pages/practiceCourse/practiceCourse",
+    "pages/assessCondition/assessCondition",
+    "pages/basicInfomation/basicInfomation",
+    "pages/msg/msg",
+    "pages/myCollect/myCollect",
+    "pages/mywish/mywish",
+    "pages/wish/wish",
+    "pages/videolearn/videolearn",
+    "pages/statistics/statistics",
+    "pages/feedback/feedback",
+    "pages/molding/molding",
+    "pages/water/water",
+    "pages/classMute/classMute",
+    "pages/login/login"
+  ],
+  "entryPagePath": "pages/index/index",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "乐动健康",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#6799FF",
+    "list": [
+      {
+        "iconPath": "icon/tabbar/sport.png",
+        "selectedIconPath": "icon/tabbar/sport2.png",
+        "pagePath": "pages/sport/sport",
+        "text": "运动"
+      },
+      {
+        "iconPath": "icon/tabbar/food.png",
+        "selectedIconPath": "icon/tabbar/food2.png",
+        "pagePath": "pages/food/food",
+        "text": "饮食"
+      },
+      {
+        "iconPath": "icon/tabbar/square.png",
+        "selectedIconPath": "icon/tabbar/square2.png",
+        "pagePath": "pages/square/square",
+        "text": "广场"
+      },
+      {
+        "iconPath": "icon/tabbar/my.png",
+        "selectedIconPath": "icon/tabbar/my2.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

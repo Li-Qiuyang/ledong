@@ -1,0 +1,53 @@
+<!--pages/personalInformation/personalInformation.wxml-->
+<view>
+  <view class="all">
+    <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+    <text class="title1" bindtap="left">返回</text>
+    <text class="pagetitle">个人资料</text>
+  </view>
+  <view class="top" bindtap="changeAvatar">
+    <image src="{{avatar}}" class="avatar"></image>
+    <view style="font-size: small;">点击更换头像</view>
+  </view>
+  <view class="item">
+    <view>昵称</view>
+    <input type="text" value="{{value1}}" bindinput="getName" class="input" />
+  </view>
+  <view class="item">
+    <view>性别</view>
+    <view style="display: flex;align-items: center;">
+      <view class="man" bindtap="choose1" data-src="{{man}}">
+        <image src="{{man}}" class="sex"></image>
+        <view>男</view>
+      </view>
+      <view class="woman" bindtap="choose2" data-src="{{woman}}">
+        <image src="{{woman}}" class="sex"></image>
+        <view>女</view>
+      </view>
+
+    </view>
+  </view>
+  <view class="item1">
+    <view>家乡</view>
+    <picker mode="region" bindchange="getUserProvince">
+      <view class="home">
+        <text wx:for="{{region}}" wx:key="index">{{item}} </text>
+        <image src="../../icon/point.png" class="point"></image>
+      </view>
+    </picker>
+  </view>
+  <view class="item1">
+    <view>生日</view>
+    <picker mode="date" header-text="选择时间" value="{{date}}" bindchange="bindDateChange">
+      <view class="home">
+        <text class="color6">{{date}}</text>
+        <image src="../../icon/point.png" class="point"></image>
+      </view>
+    </picker>
+  </view>
+  <view class="item1">
+    <view>个性签名</view>
+    <input type="text" value="{{value2}}" bindinput="getSignature" class="input2" placeholder="让大家认识你" />
+  </view>
+  <button style="width: 90%;" class="submit" bindtap="change">确定</button>
+</view>

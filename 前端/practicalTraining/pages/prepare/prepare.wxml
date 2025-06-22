@@ -1,0 +1,4 @@
+<!--pages/prepare/prepare.wxml-->
+<view class="whole">
+  <text class="countdown">{{countdown}}</text>
+</view>

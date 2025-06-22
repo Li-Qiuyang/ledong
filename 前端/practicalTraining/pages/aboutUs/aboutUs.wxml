@@ -1,0 +1,54 @@
+<!--pages/aboutUs/aboutUs.wxml-->
+<view>
+  <view class="all">
+    <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+    <text class="title1" bindtap="left">返回</text>
+    <text class="pagetitle">关于我们</text>
+  </view>
+  <view style="text-align: center;">
+    <image src='../../icon/logo.png' class="image"></image>
+    <view>乐动</view>
+  </view>
+  <view class="bottom">
+    <button style="width: 100%;" class="item">
+      <view>给我们好评</view>
+      <image src="../../icon/point.png" class="point"></image>
+    </button>
+    <button style="width: 100%;" open-type="share" class="item">
+      <view>推荐给好友</view>
+      <image src="../../icon/point.png" class="point"></image>
+    </button>
+    <button style="width: 100%;" class="item">
+      <view>版本更新</view>
+      <view>
+        <text style="margin-right: 10px;color: #5E94E4;">1.1.1</text>
+        <image src="../../icon/point.png" class="point"></image>
+      </view>
+    </button>
+    <button style="width: 100%;" class="item">
+      <view>电子邮箱</view>
+      <image src="../../icon/point.png" class="point"></image>
+    </button>
+    <button style="width: 100%;" class="item">
+      <view>客服电话</view>
+      <view>
+        <text style="margin-right: 10px;color: #5E94E4;">10086</text>
+        <image src="../../icon/point.png" class="point"></image>
+      </view>
+    </button>
+    <button style="width: 100%;" class="item">
+      <view>微博</view>
+      <view>
+        <text style="margin-right: 10px;color: #5E94E4;">@乐动</text>
+        <image src="../../icon/point.png" class="point"></image>
+      </view>
+    </button>
+    <button style="width: 100%;" class="item">
+      <view>微信</view>
+      <view>
+        <text style="margin-right: 10px;color: #5E94E4;">123456</text>
+        <image src="../../icon/point.png" class="point"></image>
+      </view>
+    </button>
+  </view>
+</view>

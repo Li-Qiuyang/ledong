@@ -1,0 +1,83 @@
+<view class="overall">
+  <image class="left" src="../../icon/left.png" bindtap="left"></image>
+  <text class="title" bindtap="left">返回</text>
+  <text class="page-title">全部课程</text>
+</view>
+<view>
+  <view class="search">
+    <input class="input" placeholder="请输入想要查找的内容" bindinput="addValue" />
+    <image src="../../icon/sport/search.png" style="width:50rpx" mode="widthFix" bindtap="search" />
+  </view>
+  <view class='select'>
+    <view class='select-left'>
+      <view class="{{active==0?'selected':''}}" id="0" bindtap='switchNav'>瑜伽</view>
+      <view class="{{active==1?'selected':''}}" id="1" bindtap='switchNav'>普拉提</view>
+      <view class="{{active==2?'selected':''}}" id="2" bindtap='switchNav'>塑性训练</view>
+      <view class="{{active==3?'selected':''}}" id="3" bindtap='switchNav'>减脂舞</view>
+      <view class="{{active==4?'selected':''}}" id="4" bindtap='switchNav'>跳绳燃脂</view>
+      <view class="{{active==5?'selected':''}}" id="5" bindtap='switchNav'>户外跑步</view>
+      <view class="{{active==6?'selected':''}}" id="6" bindtap='switchNav'>热身</view>
+    </view>
+
+    <view class='right'>
+      <swiper current='{{currentTab}}' vertical='{{true}}'>
+        <swiper-item id="0" catchtouchmove="false">
+          <scroll-view scroll-y="true" class="good-course" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+            <view wx:for="{{courseList}}" wx:key="{{index}}" data-coursename="{{item.lessonname}}" data-type="{{item.lessontype}}" data-name="{{item.lessonfilename}}" data-lessonid="{{item.lessonid}}" data-index="{{item.index}}" data-introduction="{{item.introduction}}" bindtap="video">
+              <view class="text">{{item.lessonname}}</view>
+              <image src="{{item.url}}" class="course-img" />
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <swiper-item id="1" catchtouchmove="false">
+          <scroll-view scroll-y="true" class="good-course" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+            <view wx:for="{{courseList}}" wx:key="{{index}}" data-coursename="{{item.lessonname}}" data-type="{{item.lessontype}}" data-name="{{item.lessonfilename}}" data-lessonid="{{item.lessonid}}" data-index="{{item.index}}" data-introduction="{{item.introduction}}" bindtap="video">
+              <view class="text">{{item.lessonname}}</view>
+              <image src="{{item.url}}" class="course-img" />
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <swiper-item id="2" catchtouchmove="false">
+          <scroll-view scroll-y="true" class="good-course" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+            <view wx:for="{{courseList}}" wx:key="{{index}}" data-coursename="{{item.lessonname}}" data-type="{{item.lessontype}}" data-name="{{item.lessonfilename}}" data-lessonid="{{item.lessonid}}" data-index="{{item.index}}" data-introduction="{{item.introduction}}" bindtap="video">
+              <view class="text">{{item.lessonname}}</view>
+              <image src="{{item.url}}" class="course-img" />
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <swiper-item id="3" catchtouchmove="false">
+          <scroll-view scroll-y="true" class="good-course" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+            <view wx:for="{{courseList}}" wx:key="{{index}}" data-coursename="{{item.lessonname}}" data-type="{{item.lessontype}}" data-name="{{item.lessonfilename}}" data-lessonid="{{item.lessonid}}" data-index="{{item.index}}" data-introduction="{{item.introduction}}" bindtap="video">
+              <view class="text">{{item.lessonname}}</view>
+              <image src="{{item.url}}" class="course-img" />
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <swiper-item id="4" catchtouchmove="false">
+          <scroll-view scroll-y="true" class="good-course" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+            <view wx:for="{{courseList}}" wx:key="{{index}}" data-coursename="{{item.lessonname}}" data-type="{{item.lessontype}}" data-name="{{item.lessonfilename}}" data-lessonid="{{item.lessonid}}" data-index="{{item.index}}" data-introduction="{{item.introduction}}" bindtap="video">
+              <view class="text">{{item.lessonname}}</view>
+              <image src="{{item.url}}" class="course-img" />
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <swiper-item id="5" catchtouchmove="false">
+          <scroll-view scroll-y="true" class="good-course" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+            <view wx:for="{{courseList}}" wx:key="{{index}}" data-coursename="{{item.lessonname}}" data-type="{{item.lessontype}}" data-name="{{item.lessonfilename}}" data-lessonid="{{item.lessonid}}" data-index="{{item.index}}" data-introduction="{{item.introduction}}" bindtap="video">
+              <view class="text">{{item.lessonname}}</view>
+              <image src="{{item.url}}" class="course-img" />
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <swiper-item id="6" catchtouchmove="false">
+          <scroll-view scroll-y="true" class="good-course" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+            <view wx:for="{{courseList}}" wx:key="{{index}}" data-coursename="{{item.lessonname}}" data-type="{{item.lessontype}}" data-name="{{item.lessonfilename}}" data-lessonid="{{item.lessonid}}" data-index="{{item.index}}" data-introduction="{{item.introduction}}" bindtap="video">
+              <view class="text">{{item.lessonname}}</view>
+              <image src="{{item.url}}" class="course-img" />
+            </view>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</view>

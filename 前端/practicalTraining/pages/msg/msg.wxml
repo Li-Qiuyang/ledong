@@ -1,0 +1,18 @@
+<view class="overall">
+  <image class="left" src="../../icon/left.png" bindtap="left"></image>
+  <text class="title" bindtap="left">返回</text>
+  <text class="page-title">我的消息</text>
+</view>
+<view class="list">
+  <view class="item" wx:for="{{dataList}}" wx:key="index">
+    <image src="{{item.user2[0].avatar}}" class="avater" bindtap="avater"></image>
+    <view class="demo">
+      <view class="name">{{item.user2[0].username}}</view>
+      <textarea auto-height="true" class="txt_infor" value="{{item.infor}}"></textarea>
+      <text class="time">{{item.data.time}}</text>
+    </view>
+    <view  class="detail" data-item="{{item}}" bindtap="detail">
+      <image class="msg_img" src="{{item.imgs[0]}}"></image>
+    </view>
+  </view>
+</view>

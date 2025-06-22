@@ -1,0 +1,39 @@
+<!--pages/run/run.wxml-->
+<view class="overall">
+  <!-- <image class="left" src="../../icon/left.png" bindtap="left"></image> -->
+  <text class="page-title" style="margin-left: 350rpx;">骑行</text>
+</view>
+<view class="mapArea">
+  <map class="map" id="container" style="width: 100%; height: 720px;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" covers="{{covers}}" polyline="{{polyline}}" show-compass="true" show-scale="true">
+  </map>
+  <view class="bottom1">
+    <view class="middle">
+      <view class="distance">
+        <view class="text1">{{distance}}</view>
+        <view class="text2">公里</view>
+      </view>
+      <view class="time">
+        <view class="text1">{{time}}</view>
+        <view class="text2">总时长</view>
+      </view>
+      <view class="speed">
+        <view class="text1">{{speed}}</view>
+        <view class="text2">配速</view>
+      </view>
+    </view>
+    <view class="bottom">
+      <view class="btn_pause" bindtap="pause" wx:if="{{start == 1}}">
+        <image class="pause" src="../../icon/map/pause.png" />
+        <view class="txt">暂停</view>
+      </view>
+      <view class="btn_finish" bindtap="finish" wx:if="{{start == 0}}">
+        <image class="finish" src="../../icon/map/finish.png" />
+        <view class="txt">结束</view>
+      </view>
+      <view class="btn_keep" bindtap="keep" wx:if="{{start == 0}}">
+        <image class="keep" src="../../icon/map/keep.png" />
+        <view class="txt">继续</view>
+      </view>
+    </view>
+  </view>
+</view>

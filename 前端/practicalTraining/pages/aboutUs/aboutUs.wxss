@@ -1,0 +1,56 @@
+/* pages/aboutUs/aboutUs.wxss */
+page {
+  background-color: #CAE2FA;
+}
+
+.all {
+  height: 30px;
+  background-color: white;
+  padding-top: 70rpx;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.left1 {
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 30rpx;
+  margin-right: 10rpx;
+}
+
+.title1 {
+  font-size: 35rpx;
+  margin-right: 150rpx;
+}
+
+.pagetitle {
+  font-size: 35rpx;
+  /* z-index: 1; */
+}
+
+.image {
+  width: 70px;
+  height: 70px;
+  margin-top: 40px;
+}
+
+.point {
+  width: 12px;
+  height: 12px;
+}
+
+.bottom {
+  margin-top: 20px;
+}
+
+.item {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: lighter;
+}

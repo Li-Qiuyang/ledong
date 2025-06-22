@@ -1,0 +1,109 @@
+/* pages/classMute/classMute.wxss */
+.all {
+  height: 30px;
+  background-color: white;
+  padding-top: 70rpx;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.left1 {
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 30rpx;
+  margin-right: 10rpx;
+}
+
+.title1 {
+  font-size: 35rpx;
+  margin-right: 150rpx;
+}
+
+.pagetitle {
+  font-size: 35rpx;
+  /* z-index: 1; */
+}
+
+.up {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.part1 {
+  margin-left: 15px;
+  margin-top: 30px;
+}
+
+.up1 {
+  font-size: larger;
+}
+
+.welcome {
+  width: 200px;
+  margin-right: 15px;
+}
+
+.border {
+  width: 94%;
+  height: 200px;
+  margin-left: 3%;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.border1 {
+  width: 94%;
+  height: 220px;
+  margin-left: 3%;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.line {
+  width: 6px;
+  height: 20px;
+  background-color: rgb(151, 151, 233);
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.day {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(233, 243, 247);
+}
+
+.class {
+  width: 130px;
+  height: 70px;
+  border-radius: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+scroll-view ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+  display: none;
+}
+
+.bottom {
+  width: 230px;
+}

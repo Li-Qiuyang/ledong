@@ -1,0 +1,6 @@
+<!--pages/addplan/addplan.wxml-->
+<view class="all">
+  <image class="left" src="../../icon/left.png" bindtap="left"></image>
+  <text class="title" bindtap="left">返回</text>
+  <text class="page-title">添加日程</text>
+</view>

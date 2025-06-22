@@ -1,0 +1,52 @@
+<!--pages/water/water.wxml-->
+<view>
+  <view class="all">
+    <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+  </view>
+  <view>
+    <view style="position: relative;">
+      <image src="../../icon/earth.png" class="img" style="position: absolute;" mode="widthFix"></image>
+      <view class="up">
+        <view>水是维持生命</view>
+        <view>不可缺少的物质</view>
+      </view>
+      <view class="middle">
+        <view>Water is life-substaining</view>
+        <view>An indispensable substance.</view>
+      </view>
+      <view class="line"></view>
+    </view>
+  </view>
+  <view style="position: relative;">
+    <view class="round" style="position: absolute;">
+      <text>{{now}}/{{goal}}</text>
+    </view>
+    <view class="height" style="position: absolute;"></view>
+    <view class="round2" bindtap="add" style="position: absolute;">
+      <image src="../../icon/n1.png" class="new" mode="widthFix"></image>
+    </view>
+    <image src="../../icon/n2.png" class="person"></image>
+    <view style="position: absolute;top: 540px;left: 260px;">
+      <view style="color: rgb(177, 177, 177);">喝水目标</view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          <view style="display: flex;align-items: center;">
+            <view>{{array[index]}}ml</view>
+            <image src="../../icon/point.png" style="width: 15px;margin-left: 10px;" mode="widthFix"></image>
+          </view>
+        </view>
+      </picker>
+    </view>
+    <view style="position: absolute;top: 600px;left: 260px;">
+      <view style="color: rgb(177, 177, 177);margin-top: 20px;">一杯水的量</view>
+      <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+        <view class="picker">
+          <view style="display: flex;align-items: center;">
+            <view>{{array2[index2]}}ml</view>
+            <image src="../../icon/point.png" style="width: 15px;margin-left: 10px;" mode="widthFix"></image>
+          </view>
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>

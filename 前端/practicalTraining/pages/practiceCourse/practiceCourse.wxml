@@ -1,0 +1,8 @@
+<!--pages/practiceCourse/practiceCourse.wxml-->
+<view>
+  <view class="all">
+    <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+    <text class="title1" bindtap="left">返回</text>
+    <text class="pagetitle">习练历程</text>
+  </view>
+</view>

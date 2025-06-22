@@ -1,0 +1,13 @@
+<!--
+  附带输入框的数字拨盘自定义组件，封装了milliliter自定义组件
+  components/milliliter-input/milliliter-input.wxml
+-->
+<view class="ctrlbox">
+  <view class="title"><text wx:if="{{noEmpty}}">*</text>{{unitName}}（{{unitVal}}）</view>
+  <milliliter isShow="{{true}}" isWeight="{{float}}" num="{{value}}" startNum="{{min}}" endNum="{{max}}"
+    bind:getNum="changeNumber" />
+  <view class="numbox">
+    <input type="digit" value="{{number + (isblur?' '+unitVal:'')}}" bindinput="onNumberInput" catchtap="onNumberFocus"
+      bindblur="onNumberBlur" data-key="height" maxlength="10" />
+  </view>
+</view>

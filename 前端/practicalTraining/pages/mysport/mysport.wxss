@@ -1,0 +1,172 @@
+/* pages/mysport/mysport.wxss */
+.overall {
+  position: fixed;
+  height: 70rpx;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 2;
+  padding-top: 70rpx;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.left1 {
+  height: 50rpx;
+  width: 50rpx;
+  position: fixed;
+  background-color: white;
+  left: 10rpx;
+
+  z-index: 2;
+}
+
+.title1 {
+  z-index: 1;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  left: 60rpx;
+  font-size: 35rpx;
+  margin-right: 150rpx;
+}
+
+.pagetitle {
+  font-size: 35rpx;
+  position: fixed;
+  left: 41%;
+  z-index: 1;
+}
+
+.box {
+  background-color: #CAE2FA;
+  margin-top: 160rpx;
+  z-index: -1;
+}
+
+.sport {
+  padding: 20rpx;
+  background-color: white;
+  border: 20rpx solid #CAE2FA;
+  border-radius: 50rpx;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.picker {
+  color: #666;
+}
+
+.ec-container {
+  margin-left: 32vw;
+  margin-top: -180px;
+  width: 250px;
+  height: 210px;
+  z-index: -100;
+}
+
+.ec-con {
+  width: 350px;
+  height: 300px;
+}
+
+ec-canvas {
+  width: 300px;
+  height: 300px;
+}
+
+.plan {
+  padding: 20rpx;
+}
+
+.plan-title {
+  font-size: 34rpx;
+}
+
+.down {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.plans {
+  width: 250rpx;
+  height: 100rpx;
+  background-color: #CAE2FA;
+  margin-right: 20rpx;
+  border-radius: 30rpx;
+  padding: 10rpx;
+  font-size: 30rpx;
+}
+
+.test {
+  background-color: #5E94E4;
+  border-radius: 50rpx;
+  height: 60rpx;
+  margin-top: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.ec-bar {
+  margin-left: 30vw;
+  margin-top: -200px;
+  width: 300px;
+  height: 250px;
+}
+
+.add {
+  width: 180rpx;
+  text-align: center;
+  margin-top: 30rpx;
+  padding: 30rpx;
+  color: #666;
+  border: 1px solid #D2E1FF;
+  background-color: #D2E1FF;
+  border-radius: 40rpx;
+}
+
+.add1 {
+  width: 100rpx;
+  text-align: center;
+  margin-top: 30rpx;
+  padding: 30rpx;
+  color: #666;
+  border: 1px solid #D2E1FF;
+  background-color: #D2E1FF;
+  border-radius: 40rpx;
+}
+
+checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  /* 圆角 */
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.name {
+  margin-left: 20rpx;
+}
+
+.del {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.planitems {
+  display: flex;
+  height: 60rpx;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+  padding-right: 30rpx;
+  background-color: white;
+  border: 18rpx solid #CAE2FA;
+  border-radius: 45rpx;
+}

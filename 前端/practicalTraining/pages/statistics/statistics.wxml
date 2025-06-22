@@ -1,0 +1,88 @@
+<!--pages/statistics/statistics.wxml-->
+<view class="pages">
+  <view class="up">
+    <view style="height:110px;"></view>
+    <view style="display: flex;align-items: center;justify-content: space-between;margin-left: 15px;">
+      <view>
+        <view class="word1">欢迎来到乐动</view>
+        <view class="word2">在开始使用前请您完善以下信息,</view>
+        <view class="word2">将用于计算身体数据以及运动卡路里消耗等。</view>
+        <view class="word2">乐动将严格保护你的个人信息安全</view>
+      </view>
+      <image src="../../icon/welcomePage/welcome1.png" class="img" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="down">
+    <view style="height: 55px;"></view>
+    <view class="info">
+      <view class="item">
+        <view style="width:100px;font-weight: bold;">性别</view>
+        <view style="display: flex;align-items: center;">
+          <view class="sex" style="background-color:{{sex=='男'? 'rgb(214, 238, 252)' : 'rgb(235, 235, 235)' }}" bindtap="choose1">
+            <image src="{{man}}" style="width: 20px;margin-left: 20%;margin-right: 4px;" mode="widthFix"></image>
+            <view>男</view>
+          </view>
+          <view class="sex" style="background-color:{{sex=='女'? 'rgb(255, 221, 221)' : 'rgb(235, 235, 235)' }}" bindtap="choose2">
+            <image src="{{woman}}" style="width: 20px;margin-left: 20%;margin-right: 4px;" mode="widthFix"></image>
+            <view>女</view>
+          </view>
+        </view>
+      </view>
+      <view class="item">
+        <view style="width:100px;font-weight: bold;">出生日期</view>
+        <view>
+          <picker mode="date" header-text="选择时间" value="{{date}}" bindchange="bindDateChange">
+            <text class="color6">{{date}}</text>
+          </picker>
+        </view>
+      </view>
+      <view class="item">
+        <view style="width:100px;font-weight: bold;">身高</view>
+        <view class="picker" bindtap="chooseHeight">
+              <view style="color: rgb(192, 191, 191);" wx:if="{{!ifHeight}}">请选择身高(cm)</view>
+              <view wx:if="{{ifHeight}}">{{height}}cm</view>
+            </view>
+        <view>
+          <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+            <view class="content">
+              <milliliter-input id="ctrlmill1" float="{{true}}" unitName="身高" unitVal="cm" max="{{200}}" val="{{recordnum2}}" value="{{recordnum2}}"></milliliter-input>
+              <view style="display: flex;">
+                <view class="confirm" bindtap="cancel">取消</view>
+                <view class="confirm" bindtap="confirm">确定</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="item">
+        <view style="width:100px;font-weight: bold;">体重</view>
+        <view>
+            <view class="picker"  bindtap="chooseWeight">
+              <view style="color: rgb(192, 191, 191);" wx:if="{{!ifWeight}}">请选择体重(kg)</view>
+              <view wx:if="{{ifWeight}}">{{weight}}kg</view>
+            </view>
+          <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus2}}">
+            <view class="content">
+              <milliliter-input id="ctrlmill2" float="{{false}}" unitName="体重" unitVal="kg" max="{{100}}" val="{{recordnum1}}" value="{{recordnum1}}"></milliliter-input>
+              <!-- <milliliter-input id="ctrlmill2" float="{{true}}" unitName="体重" unitVal="kg" max="{{200}}" val="{{recordnum2}}" value="{{recordnum2}}"></milliliter-input> -->
+              <view style="display: flex;">
+                <view class="confirm" bindtap="cancel2">取消</view>
+                <view class="confirm" bindtap="confirm2">确定</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view style="height: 140px;"></view>
+    <button style="width: 80%;" class="submit" bindtap="submit">确定</button>
+  </view>
+  <view class="mask" wx:if="{{sure}}"></view>
+  <view class="modalDlg" wx:if="{{sure}}">
+    <image src="{{img}}" class="imgs" mode="widthFix"></image>
+    <view style="font-weight: bold;margin-top: 20px;font-size: large;">请确定性别选择</view>
+    <view style="margin-top: 10px;font-size: small;">性别会影响身体数据计算</view>
+    <button class="btn" style="width: 80%;" bindtap="change">确认</button>
+    <view style="margin-bottom: 20px;" bindtap="choose">重新选择</view>
+  </view>
+</view>

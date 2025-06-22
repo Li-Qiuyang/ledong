@@ -1,0 +1,62 @@
+<view class="container">
+  <view class="box">
+    <!-- <navigation-bar title="{{nbTitle}}" loading="{{nbLoading}}" front-color="{{nbFrontColor}}" background-color="{{nbBackgroundColor}}" color-animation-duration="2000" color-animation-timing-func="easeIn" /> -->
+    <view class="search">
+      <input class="input" placeholder="请输入想要查找的内容" bindinput="searchtext"/>
+      <image src="../../icon/sport/search.png" style="width:50rpx" mode="widthFix"  bindtap="search"/>
+    </view>
+    <view class="swiper">
+      <swiper circular indicator-dots autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" wx:key="index">
+          <swiper-item>
+            <navigator url="{{item.link}}" hover-class="navigator-hover">
+              <image src="{{item.url}}" class="slide-image" mode="widthFix" />
+            </navigator>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <View class="middle">
+      <view>
+        <view class="scall">
+            <scroll-view scroll-x="true" bindscroll="getleft">
+            <block wx:for="{{dataList}}" wx:key="index">
+              <view class="block">
+                <view style="text-align: center;">
+                  <navigator url="{{item.link}}" hover-class="navigator-hover">
+                    <image src="{{item.src}}" class="img" mode="widthFix"></image>
+                    <view>{{item.text}}</view>
+                  </navigator>
+                </view>
+              </view>
+            </block>             
+          </scroll-view>
+        </view>
+
+        <view class="slide">
+          <view class='slide-bar'>
+            <view class="slide-show" style="width:{{slideWidth}}rpx; margin-left:{{slideLeft<=1 ? 0 : slideLeft+'rpx'}};"></view>
+          </view>
+        </view>
+      </view>
+    </View>
+    <view class="course">
+      <view class="course-title">
+        <view class="title-text">推荐好课</view>
+        <image src="../../icon/sport/right.png" style="width: 60rpx;" mode="widthFix" bindtap="course" />
+      </view>
+      <view>
+        <scroll-view scroll-y="true" class="good-course" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+          <view class="courselist">
+            <block wx:for="{{courseList}}" wx:key="index">
+              <view id="{{item.id}}" data-datavalue="{{item}}"bindtap="video">
+                <image src="{{item.url}}" mode="widthFix" class="course-img"></image>
+                <view class="course-tit">{{item.text}}</view>
+              </view>
+            </block>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>

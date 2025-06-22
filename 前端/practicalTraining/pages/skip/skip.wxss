@@ -1,0 +1,98 @@
+/* pages/skip/skip.wxss */
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.note1{
+  margin-top: 5px ;
+  margin-left: 30rpx;
+  margin-bottom: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.list{
+  margin-right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+.middle{
+  margin: 0 auto;
+  width: 700rpx;
+  height: 450rpx;
+  border-radius: 10%;
+  background-color: #CAE2FA;
+}
+.middle_head{
+  padding-top: 15rpx;
+  font-size: 35rpx;
+  display: flex;
+  justify-content: center;
+}
+.middle_mid{
+  margin-top: 50rpx;
+}
+.other1{
+  display: flex;
+  justify-content: center;
+  height: 200rpx;
+  align-items: center;
+}
+.other2{
+  display: flex;
+  justify-content: space-between;
+  height: 200rpx;
+  align-items: center;
+}
+.symbol{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 40rpx;
+}
+.txt{
+  font-size: 120rpx;
+}
+.middle_bot{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.btn{
+  background-color: rgb(241, 196, 144);
+  height: 100rpx;
+  width: 150rpx;
+  color: white;
+  font-size: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20%;
+}
+.bottom{
+  margin: 20rpx;
+  padding: 10rpx;
+  background-color:aliceblue;
+  border-radius: 5%;
+  border: 1px solid rgb(179, 176, 176);
+  margin-top: 40rpx;
+}
+.scall {
+  margin-top: 20rpx;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+.block {
+  width: 450rpx;
+  height: 158rpx;
+  display: inline-block;
+  text-align: center;
+}
+.img {
+  width:95%;
+  height: 90%;
+}

@@ -1,0 +1,58 @@
+<!--pages/video/video.wxml-->
+<view class="overall">
+  <image class="left" src="../../icon/left.png" bindtap="left"></image>
+  <!-- <text class="title" bindtap="left">返回</text> -->
+  <text class="page-title" style="margin-left:260rpx">{{name}}</text>
+</view>
+
+<video src="{{url}}" id="Video" object-fit="cover" autoplay="{{false}}" bindloadedmetadata="videoTime" bindfullscreenchange="videorequestFullScreen"></video>
+<view style="padding: 0 20rpx">
+  <scroll-view class="scall" scroll-y="true" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view class="box">
+      <view class="video-title">{{name}}</view>
+      <view class="coll" bindtap="collect">
+        <image mode="aspectFill" src="{{isCollected?'../../icon/course/collected.png':'../../icon/course/collect.png'}}" class="collect"></image>
+        <text>{{isCollected?'已收藏':'收藏'}}</text>
+      </view>
+    </view>
+    <view class="time">
+      <view>时长：{{time}}</view>
+    </view>
+    <view style="margin-bottom: 30rpx; margin-top:30rpx">
+      <view style="font-size: 38rpx;font-weight: bold; margin-bottom: 15rpx;">适用人群：</view>
+      <view class="people" wx:for="{{people}}">
+        <text class="demo">{{item}}</text>
+      </view>
+    </view>
+    <view style="margin-bottom: 30rpx;">
+      <view style="font-size: 38rpx;font-weight: bold; margin-bottom: 15rpx;">动作简述：</view>
+      <view class="people" wx:for="{{steps}}">
+        <text>{{item}}</text>
+      </view>
+    </view>
+    <view style="font-size: 38rpx;font-weight: bold; margin-bottom: 15rpx;" wx:if="{{role}}">作用：</view>
+    <view class="people" wx:for="{{role}}">
+      <text>{{item}}</text>
+    </view>
+    <view style="font-size: 38rpx;font-weight: bold;" wx:if="{{appliance}}">器具推荐：</view>
+    <view class="role" style="display: flex;">
+      <view class="appliance" wx:for="{{appliance}}" style="margin-left: 110rpx;">
+        <text>{{item}}</text>
+      </view>
+    </view>
+    <view style="font-size: 25rpx;font-weight: bold;" wx:if="{{pic}}"></view>
+    <view class="role" style="display: flex;">
+      <view class="pics" wx:for="{{pic}}">
+        <image class="pic" src="{{item}}"></image>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="end">
+  <view class="calendar" bindtap="addSchedule">
+    <image src='../../icon/course/calendar.png'></image>
+    <view class="add">{{isAdd?'已加入':'加入日程'}}</view>
+  </view>
+  <view class="start" bindtap="videorequestFullScreen">开始训练</view>
+</view>

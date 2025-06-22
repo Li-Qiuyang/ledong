@@ -1,0 +1,78 @@
+<!--pages/molding/molding.wxml-->
+<!-- 塑性训练 -->
+<view>
+  <view class="all">
+    <image class="left1" src="../../icon/left.png" bindtap="left"></image>
+    <text class="title1" bindtap="left">返回</text>
+    <text class="pagetitle">塑形训练</text>
+  </view>
+  <view class="mask" wx:if="{{sure}}"></view>
+  <view class="modalDlg" wx:if="{{sure}}">
+    <view style="font-weight: bold;margin-top: 20px;margin-bottom: 15px;">选择一个或多个训练部位</view>
+    <view style="display: flex;flex-wrap: wrap;width: 100%;">
+      <view class="{{item.choose?'partChoose':'part'}}" wx:for="{{list}}" wx:key="index" bindtap="choose1" data-info="{{item}}">{{item.title}}</view>
+    </view>
+    <button style="width: 80%;margin-top: 20px;" class="sure" bindtap="submit">确定</button>
+    <view style="margin-top: 10px;margin-bottom: 20px;" bindtap="cancle">取消</view>
+  </view>
+  <view class="back">
+    <view style="height: 1px;"></view>
+    <view class="up">
+      <view style="height: 10px;"></view>
+      <view class="up1">
+        <view>我的偏好</view>
+        <scroll-view scroll-x class="middle">
+          <view style="display: inline-block;" wx:for="{{preference}}" wx:key="index" wx:if="{{item.choose}}">
+            <view class="item">
+              <image src="{{item.src}}" class="icon"></image>
+              <view style="margin-left: 5px;margin-right: 10px;">{{item.title}}</view>
+            </view>
+          </view>
+        </scroll-view>
+        <view class="button" bindtap="change">更换</view>
+      </view>
+      <view style="height: 10px;"></view>
+    </view>
+    <view class="down">
+      <view style="height: 15px;"></view>
+      <view style="font-size: large;margin-left: 15px;">训练计划</view>
+      <view style="background-color:rgba(244, 243, 243,0.4);margin-top: 20px;">
+        <view style="height: 10px;"></view>
+        <view class="video1" style="display: flex;align-items: center;" wx:for="{{course}}" wx:key="index" bindtap="open" data-info="{{item}}">
+          <view style="display: flex;align-items: center;">
+            <view style="height: 100px;background-color: #b7ccf8;width: 7px;"></view>
+            <view>
+              <view style="margin-left: 10px;width: 160px;">{{item.lessonname}}</view>
+              <view style=" margin-left: 11px;font-size: small;margin-top: 5px;">及时练习哦~</view>
+            </view>
+          </view>
+          <view style="display: flex;">
+            <view class="cover"></view>
+            <image src="{{item.url}}" class="course"></image>
+          </view>
+        </view>
+        <view style="height: 20px;"></view>
+      </view>
+    </view>
+  </view>
+  <view class="down1">
+    <view style="font-size: large;margin-left: 15px;margin-top: 15px;">全网跟练</view>
+    <scroll-view scroll-x class="middle2">
+      <view style="display: inline-block;" wx:for="{{video}}" wx:key="index">
+        <view class="{{item.choose?'item22':'item2'}}" bindtap="choose2" data-info="{{item}}">
+          <view>{{item.title}}</view>
+          <view class="line" wx:if="{{item.choose}}"></view>
+        </view>
+      </view>
+    </scroll-view>
+    <view style="display: flex;align-items: center;margin-top: 20px;margin-left: 10px;" wx:for="{{content}}" wx:key="lessonid" bindtap="open" data-info="{{item}}">
+      <image src="{{item.url}}" class="course1"></image>
+      <view style="margin-left: 20px;">
+        <view style="width: 170px;">{{item.lessonname}}</view>
+        <view style="font-size: small;color: gray;">全身塑形</view>
+        <view style="margin-top: 40px;font-size: small;color: gray;">10:14 4279人跟练</view>
+      </view>
+    </view>
+    <view style="height: 20px;"></view>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+<!--pages/basicInfomation/basicInfomation.wxml-->
+<view class="box">
+  <image src="../../images/background.jpg" class="back-img"></image>
+  <image class="left" src="../../icon/left.png" bindtap="left"></image>
+</view>
+<view class="ava">
+  <view class="text">
+    <view>没有健康,</view>
+    <view>快乐会大打折扣</view>
+  </view>
+  <image src="{{head}}" class="avatar"></image>
+</view>
+<view class="height">
+  <view class="demo">
+    <image src="../../icon/basicInformation/height.png" mode="aspectFill" class="icon"></image>
+    <view>{{height}}cm</view>
+  </view>
+  <view class="demo">
+    <image src="../../icon/basicInformation/weight.png" mode="aspectFill" class="icon"></image>
+    <view>{{weight}}kg</view>
+  </view>
+  <view class="demo" style="font-weight: bold;">
+    <view>BMI指数：{{BMI}}</view>
+  </view>
+</view>

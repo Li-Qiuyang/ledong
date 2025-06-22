@@ -1,0 +1,57 @@
+<!--pages/food/food.wxml-->
+<view class="containers">
+  <view class="food">
+    <view class="trend" bindtap="dirary">
+      <image src='../../icon/food/trend.png'></image>
+      <text>饮食日记</text>
+    </view>
+    <view class="food-title">今日记录</view>
+    <view class="food-time">{{time}}</view>
+    <view class="icon">
+      <image src='../../icon/food/food.png' mode="widthFix"></image>
+    </view>
+    <view class="kaluli">
+      <view>今天吃了</view>
+      <view style="color: white; font-weight: bold;">{{getKcal}}</view>
+      <view>千卡</view>
+    </view>
+    <view class="add">
+      <view bindtap="choose" id="1">
+        <view style="margin-bottom: 10rpx;">
+          <image src="../../icon/food/add.png" mode="aspectFill" style="width: 45rpx; height: 45rpx;"></image>
+        </view>
+        <image src='../../icon/food/breakfast.png' mode="aspectFill"></image>
+        <view>早餐</view>
+      </view>
+      <view bindtap="choose" id="2">
+        <view style="margin-bottom: 10rpx;">
+          <image src="../../icon/food/add.png" mode="aspectFill" style="width: 45rpx; height: 45rpx;"></image>
+        </view>
+        <image src='../../icon/food/lunch.png' mode="aspectFill"></image>
+        <view>午餐</view>
+      </view>
+      <view bindtap="choose" id="3">
+        <view style="margin-bottom: 10rpx;">
+          <image src="../../icon/food/add.png" mode="aspectFill" style="width: 45rpx; height: 45rpx;"></image>
+        </view>
+        <image src='../../icon/food/dinner.png' mode="aspectFill"></image>
+        <view>晚餐</view>
+      </view>
+    </view>
+  </view>
+  <view class="suggest">
+  <view bindtap="refresh" style="display: flex; justify-content: space-between; align-items: center;">
+    <view class="suggest-title">饮食推荐</view>
+    <image src="../../icon/refresh.png" style="width: 55rpx; height: 55rpx;" animation="{{animationData}}"></image>
+  </view>
+    <view class="suggest_infor" wx:for="{{menu}}" wx:for-index="index" wx:key="index" data-datavalue="{{item}}" bindtap="include">
+      <view>
+        <image class="food_pic" src="{{item.menuSrc}}" mode="aspectFill"></image>
+      </view>
+      <view class="include" style="background-color: {{item.color}}">
+        <view class="food_name">{{item.menuName}}</view>
+        <view class="food_trait">({{item.trait}})</view>
+      </view>
+    </view>
+  </view>
+</view>

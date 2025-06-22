@@ -1,0 +1,151 @@
+/* pages/feedback/feedback.wxss */
+page {
+  background-color: #CAE2FA;
+}
+
+.all {
+  height: 30px;
+  background-color: white;
+  padding-top: 70rpx;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.left1 {
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 30rpx;
+  margin-right: 10rpx;
+}
+
+.title1 {
+  font-size: 35rpx;
+  margin-right: 150rpx;
+}
+
+.pagetitle {
+  font-size: 35rpx;
+  /* z-index: 1; */
+}
+
+.point {
+  width: 20px;
+  height: 15px;
+  margin-right: 10px;
+}
+
+.up {
+  width: 94%;
+  margin-left: 3%;
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.up1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  width: 94%;
+  margin-left: 3%;
+}
+
+.middle {
+  margin-top: 20px;
+  background-color: white;
+  height: 200px;
+  width: 94%;
+  margin-left: 3%;
+  border-radius: 10px;
+}
+
+.input {
+  width: 96%;
+  margin-left: 3%;
+}
+
+.bottom {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.add {
+  background-color: #8cceec;
+  border-radius: 10px;
+  width: 87px;
+  height: 87px;
+  margin-left: 3px;
+  text-align: center;
+  line-height: 87px;
+  font-size: larger;
+  color: aliceblue;
+}
+
+.imgs {
+  width: 87px;
+  height: 87px;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 10px;
+}
+
+.item {
+  width: 96%;
+  margin-left: 2%;
+  margin-top: 15px;
+  border-radius: 10px;
+  background-color: white;
+  /* height: 50px; */
+}
+
+.itemContent {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image {
+  width: 20px;
+  height: 15px;
+}
+
+.choice {
+  width: 96%;
+  margin-left: 2%;
+  margin-bottom: 10px;
+}
+
+.button {
+  color: white;
+  background-color: #5E94E4;
+  border-radius: 20px;
+  margin-top: 80px;
+}
+
+.button1 {
+  border-radius: 50px;
+}
+
+.success {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.answer {
+  width: 96%;
+  background-color: white;
+  margin-left: 2%;
+  border-radius: 5px;
+  margin-top: 10px;
+}

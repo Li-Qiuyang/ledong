@@ -1,0 +1,46 @@
+/* pages/map/map.wxss */
+.header {
+  position: absolute;
+  top: 100rpx;
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.cChild{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  align-items: center;
+  border-radius: 5%;
+}
+.child1{
+  margin-right: 70rpx;
+}
+.time{
+  font-size: 40rpx;
+}
+.dis{
+  font-size: 40rpx;
+}
+
+.bottom{
+  position: absolute;
+  bottom: 50rpx;
+  height: 100rpx;
+  width: 100%;
+}
+.back{
+  float: right;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size:50rpx;
+  line-height: 30rpx;
+}
+.txt{
+  font-size: 25rpx;
+  text-align: center;
+}

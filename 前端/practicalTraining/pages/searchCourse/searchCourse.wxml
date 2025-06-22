@@ -1,0 +1,24 @@
+<view class="overall">
+  <image class="left" src="../../icon/left.png" bindtap="left"></image>
+  <text class="title" bindtap="left">返回</text>
+  <text class="page-title">全部课程</text>
+</view>
+<view class="con">
+  <view class="top" wx:if="{{url}}">
+    <view class="classtitle">{{title}}</view>
+    <view class="titletxt">{{text}}</view>
+    <view class="demo">
+      <image src="{{url}}" class="enter-img" mode="aspectFill"></image>
+      <view class="tit">{{title}}</view>
+      <view class="enter" bindtap="enter">进入</view>
+    </view>
+  </view>
+  <view class="box">
+      <scroll-view scroll-y="true" class="scroll">
+        <view wx:for="{{newlist}}" wx:key="{{index}}" data-coursename="{{item.lessonname}}" data-type="{{item.lessontype}}" data-name="{{item.lessonfilename}}" data-lessonid="{{item.lessonid}}" data-index="{{item.index}}" data-introduction="{{item.introduction}}" bindtap="video" class="video">
+          <image src="{{item.url}}" class="course-img" mode="aspectFill"/>
+          <view class="text">{{item.lessonname}}</view>
+        </view>
+      </scroll-view>
+  </view>
+</view>

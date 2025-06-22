@@ -1,0 +1,135 @@
+<!--pages/my/my.wxml-->
+<view class="overall1">
+  <view class="head1"></view>
+  <view class="head2">
+    <view class="up" wx:if="{{!hasUserInfo}}">
+      <image src='https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0' class="image"></image>
+      <view class="login">
+        <view bindtap="login1">登录</view>
+        <view style="color: gray;margin-left: 10px;margin-right: 10px;">|</view>
+        <view bindtap="login">注册</view>
+      </view>
+    </view>
+    <view class="up" wx:else>
+      <image src="{{head}}" class="image"></image>
+      <view class="nickName">
+        <view class="name">{{name}}</view>
+        <view class="signature">个性签名：{{signature}}</view>
+      </view>
+      <view>
+        <view class="head" bindtap="pointing">
+          <text class="person">个人主页</text>
+          <view class="point">
+            <image class="image1" src="../../icon/point.png"></image>
+          </view>
+        </view>
+        <view class="back" bindtap="mood" wx:if="{{!mood}}">
+          +心情
+        </view>
+        <view class="back2" wx:if="{{mood}}">
+          <image src="{{src}}" class="imgs"></image>
+          <text>{{word}}</text>
+        </view>
+      </view>
+    </view>
+    <view style="display: flex;margin-top: 50rpx;">
+      <view class="items" bindtap="sport">
+        <view class="demo">
+          <view class="weight">总运动</view>
+          <image src="../../icon/calorie.png" style="width: 50rpx; height: 50rpx"></image>
+        </view>
+        <view style="display: flex; align-items: center;">
+          <view class="weightnum">{{time}}</view>
+          <view style="color: #666;">分钟</view>
+        </view>
+        <view style="border-top: 1px solid #ccc; margin-top: 10rpx; padding-top: 10rpx;">{{todaytime?"今日运动："+todaytime+"分钟":"今日还没有运动哦"}}</view>
+      </view>
+      <view class="items" bindtap="chooseWeight">
+        <view class="demo">
+          <view class="weight">体重</view>
+          <image src="../../icon/basicInformation/weight.png" style="width: 50rpx; height: 50rpx"></image>
+        </view>
+        <view style="display: flex; align-items: center;">
+          <view class="weightnum">{{weight}}</view>
+          <view style="color: #666;">kg</view>
+        </view>
+        <view style="border-top: 1px solid #ccc; margin-top: 10rpx; padding-top: 10rpx;display: flex;">
+          <view>BMI：{{BMI}}</view>
+          <view style="margin-left: 30rpx;">{{text}}</view>
+        </view>
+      </view>
+      <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+        <view class="content">
+          <!-- <milliliter-input id="ctrlmill1" float="{{false}}" unitName="身高" unitVal="身高" max="{{200}}" val="{{recordnum1}}" value="{{recordnum1}}"></milliliter-input> -->
+          <milliliter-input id="ctrlmill2" float="{{true}}" unitName="体重" unitVal="kg" max="{{200}}" val="{{recordnum2}}" value="{{recordnum2}}"></milliliter-input>
+          <view style="display: flex;">
+            <view class="confirm" bindtap="cancel">取消</view>
+            <view class="confirm" bindtap="confirm">确定</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="down">
+      <view class="down1"></view>
+      <view class="downItem" bindtap="information">
+        <view class="items2">
+          <image src="../../icon/b1.png" class="item2"></image>
+          <view style="margin-left: 10px;">基本信息</view>
+        </view>
+        <image class="image1" src="../../icon/point.png"></image>
+      </view>
+      <view class="downItem" bindtap="record">
+        <view class="items2">
+          <image src="../../icon/b6.png" class="item2"></image>
+          <view style="margin-left: 10px;">运动记录</view>
+        </view>
+        <image class="image1" src="../../icon/point.png"></image>
+      </view>
+      <view class="downItem" bindtap="wish">
+        <view class="items2">
+          <image src="../../icon/b4.png" class="item2"></image>
+          <view style="margin-left: 10px;">我的心愿</view>
+        </view>
+        <image class="image1" src="../../icon/point.png"></image>
+      </view>
+      <view class="downItem" bindtap="myCollect">
+        <view class="items2">
+          <image src="../../icon/b3.png" class="item2"></image>
+          <view style="margin-left: 10px;">我的收藏</view>
+        </view>
+        <image class="image1" src="../../icon/point.png"></image>
+      </view>
+      <view class="downItem" bindtap="msg">
+        <view class="items2">
+          <view class="img_div">
+            <view class="red_circle" wx:if="{{msgNum}}">{{msgNum}}</view>
+          <image src="../../icon/c3.png" class="item2"></image>
+          </view>
+          <view style="margin-left: 10px;">消息</view>
+        </view>
+        <image class="image1" src="../../icon/point.png"></image>
+      </view>
+      <view class="downItem" bindtap="set">
+        <view class="items2">
+          <image src="../../icon/c4.png" class="item2"></image>
+          <view style="margin-left: 10px;">设置</view>
+        </view>
+        <image class="image1" src="../../icon/point.png"></image>
+      </view>
+      <view class="downItem" bindtap="aboutUs">
+        <view class="items2">
+          <image src="../../icon/c5.png" class="item2"></image>
+          <view style="margin-left: 10px;">关于我们</view>
+        </view>
+        <image class="image1" src="../../icon/point.png"></image>
+      </view>
+      <view class="downItem" bindtap="feedback">
+        <view class="items2">
+          <image src="../../icon/c6.png" class="item2"></image>
+          <view style="margin-left: 10px;">意见反馈</view>
+        </view>
+        <image class="image1" src="../../icon/point.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

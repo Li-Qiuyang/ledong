@@ -1,0 +1,33 @@
+<view class="overall">
+  <image class="left" src="../../icon/left.png" bindtap="left"></image>
+  <text class="page-title">我的收藏</text>
+</view>
+<view class="tit">
+    <view>
+        <view class="fir"  class="{{fir?'style1':'style2'}}" bindtap="change1">跟练视频</view>
+        <view class="{{fir?'line':''}}"></view>
+    </view>
+    <view>
+        <view class="sec"  class="{{sec?'style1':'style2'}}" bindtap="change2">健康食谱</view>
+        <view class="{{sec?'line':''}}"></view>
+    </view>
+</view>
+<view class="course" wx:if="{{fir}}" wx:for="{{list}}" bindtap="lesson" data-datavalue="{{item}}">
+  <view class="demo">
+    <image src="{{item.url}}" mode="aspectFill"></image>
+    <view style="line-height: 50rpx;">
+      <view>{{item.lessonname}}</view>
+      <view style="color: #666;">今日跟练：{{item.pratice}}分钟</view>
+      <view style="color: #666;">{{item.judge ?'今天练过':'今日还未练'}}</view>
+    </view>
+  </view>
+</view> 
+<view class="suggest_infor" wx:if="{{sec}}" wx:for="{{menuList}}"  wx:key="index" data-datavalue="{{item}}" bindtap="include">
+  <view>
+    <image class="food_pic" src="{{item.menuSrc}}"></image>
+  </view>
+  <view class="include" style="background-color:#fab9b0">
+    <view class="food_name">{{item.menuName}}</view>
+    <view class="food_trait">({{item.trait}})</view>
+  </view>
+</view>

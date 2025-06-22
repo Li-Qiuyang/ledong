@@ -1,0 +1,119 @@
+<!--pages/square/square.wxml-->
+<view class="overall1">
+  <view class="head1"></view>
+  <view class="head2">
+    <view class="up1">
+      <view class="head">
+        <view class="up">
+          <view bindtap="discover" style="margin-right: 20px;margin-top: 15px;" class="{{point1?'point':'point1'}}">关注</view>
+          <view bindtap="recommend" style="margin-top: 15px;" class="{{point2?'point':'point2'}}">推荐</view>
+        </view>
+        <image src="../../icon/e3.png" class="add" bindtap="add"></image>
+      </view>
+      <view>
+        <view class="search">
+          <input class="input" bindinput="searchtext" placeholder="请输入想要查找的内容" value="{{content}}" />
+          <image src="../../icon/sport/search.png" style="width:50rpx" mode="widthFix" bindtap="search" />
+        </view>
+      </view>
+    </view>
+    <view class="down">
+      <!-- 关注 -->
+      <view class="content" wx:if="{{point1}}">
+        <view>
+          <scroll-view scroll-y="true" class="good-course" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+            <view class="picture">
+              <view class="item" wx:for="{{list}}" data-item='{{item}}' wx:key="index" bindtap="remark" style="background-color: #CAE2FA;">
+                <view style="text-align: center;">
+                  <image class="pic" wx:if="{{item.imgs.length > 0}}" src="{{item.imgs[0]}}" mode="widthFix"></image>
+                </view>
+                <view class="middle1">
+                  <view class="left1">
+                    <textarea auto-height="true" class="txt_title" value="{{item.data.title}}"></textarea>
+                    <view class="info">
+                      <view class="items">
+                        <image class="photo" src="{{item.forwardJudge?'../../icon/content6.png':'../../icon/content5.png'}}"></image>
+                        <view>{{item.forward}}</view>
+                      </view>
+                      <view class="items">
+                        <image class="photo" src="../../icon/content2.png"></image>
+                        <view>{{item.comment}}</view>
+                      </view>
+                      <view class="items">
+                        <image class="photo" src="{{item.likeJudge?'../../icon/content4.png':'../../icon/content3.png'}}"></image>
+                        <view>{{item.like}}</view>
+                      </view>
+                      <view class="items">
+                        <image class="avatar" src="{{item.user[0].avatar}}"></image>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+      <!-- 推荐 -->
+      <view wx:if="{{point2}}">
+        <view>
+          <view class="topic">热门话题</view>
+          <view class="tips">
+            <view wx:for="{{subject}}" wx:key="index">
+              <view class="tip" style="color: white;background-color: {{item.color}};" bindtap="topics" data-topic="{{item}}">{{item.topic}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="content">
+          <scroll-view scroll-y="true" class="good-course2" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" style="white-space: nowrap;">
+            <view wx:for="{{value}}" wx:if="{{value}}" wx:for-index="index" wx:key="index" data-datavalue="{{item}}">
+              <view class="all">
+                <view class="infomation">
+                  <image bindtap="other" src="{{item.user[0].avatar}}" class="avatarItem" data-item="{{item}}"></image>
+                  <view>
+                    <view style="font-size: large;">{{item.user[0].username}}</view>
+                    <view class="other">{{item.data.time}}</view>
+                  </view>
+                </view>
+                <view wx:if="{{item.data.ismine}}" bindtap="delete" data-item='{{item}}'>
+                  <image src="../../icon/del.png" style="width: 50rpx;height: 50rpx;"></image>
+                </view>
+                <view wx:if="{{!item.data.ismine}}" class="right">
+                  <view style="font-size: small;color: white;" data-item='{{item}}' bindtap="concern">{{item.concern ?'已关注':'+关注'}}</view>
+                </view>
+              </view>
+              <view class="publish" data-item='{{item}}' bindtap="remark">
+                <textarea auto-height="true" class="txt_title" value="{{item.data.title}}"></textarea>
+                <textarea auto-height="true" class="txt_content" value="{{item.data.content}}"></textarea>
+                <view style="display: flex;flex-wrap: wrap;" wx:if="{{item.imgs[0]}}">
+                  <view class="imgs" wx:for="{{item.imgs}}" style="display: flex;" wx:key="index">
+                    <image src="{{item}}" class="img"></image>
+                  </view>
+                </view>
+                <view wx:if="{{item.data.address != 'undefined' && item.data.address}}" class="address">
+                  <image src="../../icon/address.png" class="address_img"></image>
+                  <text>{{item.data.address}}</text>
+                </view>
+              </view>
+              <view class="four">
+                <view class="downPart" bindtap="forward" data-item='{{item}}'>
+                  <image src="{{item.forwardJudge?'../../icon/content6.png':'../../icon/content5.png'}}" class="contents"></image>
+                  <view>{{item.forward}}</view>
+                </view>
+                <view class="downPart">
+                  <image src="../../icon/content2.png" class="contents" bindtap="remark" data-item='{{item}}'></image>
+                  <view>{{item.comment}}</view>
+                </view>
+                <view class="downPart">
+                  <image src="{{item.likeJudge?'../../icon/content4.png':'../../icon/content3.png'}}" class="contents" bindtap="like" data-item='{{item}}'></image>
+                  <view>{{item.like}}</view>
+                </view>
+              </view>
+              <view class="line"></view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
